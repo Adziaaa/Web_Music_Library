@@ -1,0 +1,38 @@
+<html>
+<body>
+    <header>
+      <h1>Welcome to Web Technology!</h1>
+    </header>
+    <nav>
+      <header>
+        <h2>Menu Header</h2>
+      </header>
+      <ul>
+        <li>Menu 1</li>
+        <li>Menu 2</li>
+        <li>Menu 3</li>
+      </ul>
+    </nav>
+    <section>
+        <article>
+            <h2>Article Header 1</h2>
+            Article Content 1
+        </article>
+        <article>
+            <h2>Article Header 1</h2>
+            Article Content 2
+        </article>
+        <article>
+            <h2>Article Header 1</h2>
+            Article Content 3
+        </article>
+    </section>
+     
+    <footer>
+      <ul>
+        <li>Copyright</li>
+        <li></li>
+      </ul>
+    </footer>
+  </body>
+  </html>

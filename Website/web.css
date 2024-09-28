@@ -1,0 +1,132 @@
+html{
+.logo{
+  display: inline;
+}
+
+a {
+color: #ffffff;
+text-align: right;
+transition: 0.25s;
+
+}
+.title-section
+{
+  background-color: rgb(4, 2, 0);
+  margin: 10px;
+ 
+ 
+}
+
+
+a:link {
+  text-decoration: none; /* Unvisited link */
+}
+a:visited {
+  text-decoration: none; /* Visited link */
+}
+a:hover {
+  text-decoration: none; /* Mouse over link */
+}
+a:active {
+  text-decoration: none; /* Selected link */
+}
+li 
+{
+color: #ffffff;
+text-align: right;
+display: inline;
+list-style: none;
+background-color: black;
+text-decoration: none;
+text-align: right;
+
+}
+ul {
+  color: #fafaf9;
+  text-decoration: none;
+  text-align: right;
+}
+.menu {
+
+  
+  display: inline;
+}
+h3 {color: rgb(255, 255, 255);}
+h2 {
+  color: #ffffff;
+display: inline;
+text-align: left;
+  flex: 1;
+  
+}
+ul li {   /*list */
+  text-align: right;
+  display: inline;
+  background-color: black;
+  margin: 5px;
+  text-decoration: none;
+}
+
+
+
+h1{ font-size: 500%;
+    color: #cdd4ab;
+}
+body {
+  font-family: 'Fredoka', sans-serif;
+    margin: 50px 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-height: 95vh;
+    background-image: url(./images/musiccd.jpg) ;
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.logo{
+
+  width: 140px;
+
+}
+
+
+.main {
+  text-align: left;
+height: 200px;
+  display: flex;
+    justify-items: center; 
+  align-items: center;
+  margin: 90px 0px 0px 10px ;
+
+  }
+  nav {
+    
+padding:  0px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+
+  }
+.button{
+width: 100px;
+height: 50px;
+transition: 0.25s;
+background-color: rgb(14, 2, 2);
+border: none;
+border-radius: 5px;
+cursor: pointer;
+color: rgb(255, 255, 255);
+font-family: 'Fredoka', sans-serif;
+font-weight: bold;
+
+}
+.button:hover{
+  background-color: rgb(220, 31, 31);
+}
+ 
+
+    
+}
+
