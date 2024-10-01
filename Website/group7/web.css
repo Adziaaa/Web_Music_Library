@@ -81,7 +81,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 110px 0px 0px 90px;
+  margin: 170px 0px 0px 90px;
 }
   nav {
     
@@ -114,29 +114,18 @@ margin-left: 30px;
 
 
 
-.footer-section
-{
-  padding: 10px 10px 0px 10px ;
-    background-color: rgb(4, 2, 0);
-  width: 100%;
-display: block;
-justify-content: space-between;
-  align-items: center;
-  position: relative;
-  margin-top: 150px;
 
-}
 
 .footer-section {
   padding: 10px;
   background-color: rgb(4, 2, 0);
   width: 100%;
-  height: auto;
+  height: 90px;
   display: block;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin-top: 150px;
+  margin-top: 170px;
   margin-bottom: 0px;
 
 
