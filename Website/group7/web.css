@@ -12,8 +12,6 @@ transition: 0.25s;
 .title-section
 {
   background-color: rgb(4, 2, 0);
-  margin: 10px;
- 
  
 }
 
@@ -22,15 +20,15 @@ a:link {
   text-decoration: none; /* Unvisited link */
 }
 a:visited {
-  text-decoration: none; /* Visited link */
+  text-decoration: red; /* Visited link */
 }
 a:hover {
-  text-decoration: none; /* Mouse over link */
+  text-decoration: red; /* Mouse over link */
 }
 a:active {
   text-decoration: none; /* Selected link */
 }
-li 
+li , .bar 
 {
 color: #ffffff;
 text-align: right;
@@ -74,13 +72,13 @@ h1{ font-size: 500%;
 }
 body {
   font-family: 'Fredoka', sans-serif;
-    margin: 50px 50px 0 50px;
+    margin: 10px 10px 10px 10px;
     display: flex;
     flex-direction: column;
     padding: 10px;
     min-height: 95vh;
     background-image: url(./images/musiccd.jpg) ;
- 
+ background-color: black;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -126,7 +124,44 @@ font-weight: bold;
   background-color: rgb(220, 31, 31);
 }
  
+.footer-section
+{
+  padding: 10px 10px 0px 10px ;
+    background-color: rgb(4, 2, 0);
+  width: 100%;
+margin-top: 100px;
+height: 50px;
+display: inline;
+position: relative;
+flex: auto;
+margin-bottom: 0px; 
+}
 
+.footer-section {
+  padding: 10px;
+  background-color: rgb(4, 2, 0);
+  width: 100%;
+  height: auto;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: 170px;
+  margin-bottom: 0px;
+
+
+}
+
+
+
+#footer{
+display: inline;
+float:right;
+text-align: right;
+color: red;
+font-size: xx-small;
+margin-bottom: 0px; 
+}
     
 }
 
