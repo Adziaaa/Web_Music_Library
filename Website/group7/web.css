@@ -137,7 +137,7 @@ ul li {   /*list */
   display: inline;
   background-color: black;
   margin: 5px;
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 3px;
 }
 
