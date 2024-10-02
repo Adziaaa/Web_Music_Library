@@ -2,8 +2,8 @@ html {
 
 body {background-color: #000000 ;
      font-family:arial}
-  h2 , p { color: #000000; }
-h1 {color: #ffffff;}
+   p { color: #000000; }
+h1, h2 {color: #ffffff;}
 
 .flex-container {    display: flex;
     gap: 10px;}
@@ -138,4 +138,9 @@ footer {
         
           }
 
+          .title-section
+{
+  background-color: rgb(13, 13, 13);
+ 
+}
 }
