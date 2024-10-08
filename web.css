@@ -1,0 +1,54 @@
+html{
+
+h2 { font-size: medium;}
+
+
+h1{ font-size: 500%;
+    color: #16423C;
+}
+body {font-family: "Poppins", sans-serif;
+    margin: 50px 50px 0 50px;
+    background-color: #C4DAD2;
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+  
+}
+.main {
+    flex: 1;
+    
+  }
+ 
+ .imagesweb {
+    height: 200px; 
+    
+
+ } 
+
+.card {
+        
+        width: 50%;
+        margin-bottom: 30px;
+      }
+ .left {
+    float: left;
+  }
+  .right {
+    float: left;
+  }
+  #atari800 {
+    
+  
+    margin-right: 50px;
+  }
+  #music {
+ 
+    margin-right: 50px;}
+
+    footer {
+        text-align: right;
+        color: #16423C;
+      }
+  
+}
+
