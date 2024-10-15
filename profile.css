@@ -1,0 +1,29 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 50px 50px 0 50px;
+    background-color: #C4DAD2;
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+}
+.profile-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-section {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.form-section h4 {
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.form-control {
+    box-sizing: border-box;
+    width:100%;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Web Music Library</title>
+    <link rel="stylesheet" href="./profile.css">
+</head>
+<body>
+
+<div class="profile-container">
+    <h2 class="text-center mb-4">Profile Settings</h2>
+
+    <form action="#" method="POST">
+        <div class="form-section">
+            <h3>Account</h3>
+            
+            <!-- all data here is placeholder of course -->
+            <label for="name">Name</label>
+            <br>
+            <input class="form-control" type="text" id="name" name="name" value="John Doe" placeholder="John Doe" required>
+
+            <br>
+            <label for="description">Description</label>
+            <br>
+            <textarea class="form-control" id="description" name="description" rows="3" placeholder="Music enthusiast and artist follower."></textarea>
+
+            <br>
+            <label for="created_at">Member since</label>
+            <br>
+            <input class="form-control" type="text" id="created_at" value="January 1, 2024" disabled>
+
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input class="form-control" type="email" id="email" name="email" value="john.doe@example.com" placeholder="john.doe@example.com" required>
+
+            <br>
+            <label for="language">Language</label>
+            <br>
+            <select class="form-control" id="language" name="language">
+                <option value="en" selected>English (EN)</option>
+                <option value="es">Español (ES)</option>
+                <option value="fr">Polski (PL)</option>
+                <!-- add other languages as needed -->
+            </select>
+        </div>
+
+        <div class="form-section">
+            <h3>Email notifications</h3>
+
+            <input type="checkbox" id="notify_songs" name="notify_songs" checked>
+            <label for="notify_songs">
+                Notify me when followed artists release new songs
+            </label>
+
+            <br>
+            <input type="checkbox" id="notify_messages" name="notify_messages">
+            <label for="notify_messages">
+                Notify me when followed artists post new messages
+            </label>
+        </div>
+
+        <div class="form-section">
+            <h3>Change password</h3>
+
+            <label for="old_password">Current Password</label>
+            <br>
+            <input class="form-control" type="password" id="old_password" name="old_password">
+
+            <br>
+            <label for="new_password">New Password</label>
+            <br>
+            <input class="form-control" type="password" id="new_password" name="new_password">
+
+            <br>
+            <label for="confirm_password">Confirm New Password</label>
+            <br>
+            <input class="form-control" type="password" id="confirm_password" name="confirm_password">
+
+            <!-- 2fa placeholder -->
+            <br>
+            <a href="#">Reset password using 2FA</a>
+        </div>
+
+        <div class="form-section">
+            <h3>Delete account</h3>
+            <p class="text-danger">Warning: Deleting your account is permanent and cannot be undone.</p>
+            <button type="button">Delete Account</button>
+        </div>
+
+        <div class="text-center">
+            <button type="submit">Save Changes</button>
+        </div>
+    </form>
+</div>
+<footer>
+    <p>Made By Group 7</p>
+</footer>
+</body>
+</html>
