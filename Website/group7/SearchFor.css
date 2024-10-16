@@ -3,9 +3,16 @@
     padding: 0;
 }
 
+body{
+  background-image: url(./images/searchFor_backgrounds.jpg);
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
 .searchBarSection{
   align-items: center;
-  background-color:darkgreen;
+  background-color:rgb(50, 59, 50);
   border-radius: 0 0 70px 70px;
   padding-top: 1%;
   width: 100%;
@@ -26,7 +33,7 @@
   background-position: right;
 }
 
-.container{
+.HeadContainer{
   display:block;
   margin: auto;
   padding: 10px;
@@ -36,9 +43,79 @@
 .button{
   padding: 10px;
   border-radius: 30px;
+  transition: background-color 0.2s ease-out 20ms
 }
 
 button[name="songs"], button[name="albums"], button[name="artists"]{
   margin-right:20px;
+}
 
+.button:hover{
+  background-color: black;
+  color: aliceblue;
+}
+
+.list{
+  display: flex;
+  padding: auto;
+  border-radius: 10px;
+  max-height: 2%;
+}
+
+.picture{
+  border-radius: 20px;
+  max-width: 150px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 100;
+  height: auto;
+  margin-right: 20px auto;
+  border-radius: 8px;
+  transition: transform 0.2s ease-out 20ms
+}
+
+.ArtistPicture{
+  border-radius: 50%;
+  max-width: 150px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 100;
+  height: 100;
+  margin-right: 20px auto;
+  transition: transform 0.2s ease-out 20ms
+}
+
+
+.container{
+  box-sizing: border-box;
+  color: aliceblue;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows:auto auto;
+  align-items:flex-start;
+  padding: 10px;
+}
+
+.info{
+  text-align: center;
+  justify-content: center;
+  padding-top: 10%;
+  font-size: medium;
+  max-width: 400px;
+  padding-left: 30%;
+}
+
+.picture:hover, .ArtistPicture:hover{
+  transform: scale(1.2);
+}
+
+h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+p {
+  color: #ffffff;
+  line-height: 1.5;
 }
