@@ -4,7 +4,10 @@
         <title>Search Page</title>
         <link rel="stylesheet" href="./SearchFor.css" />
         <section class="searchBarSection">
-            <input id="searchBar"class="searchBar" type="text" name="name"><br>
+          <form class="searchBar">
+            <input id="searchBar"  type="text"><br>
+            <button type="submit" id="searchButton"><img src="./images/search_icon.png" class="searchIcon"></button>
+          </form>
             <div class="HeadContainer"> 
                 <button name="songs"  class="button">Songs</button>
                 <button name="albums"  class="button">Albums</button>
@@ -17,7 +20,7 @@
         <section class="searchingList">
             <ol>
                 <li class="list"> 
-                  <div class="container">
+                  <div class="container" id="searchContainer">
                     <div class="info" id="song">
                         <img src="https://i.scdn.co/image/ab67616d0000b2734246e3158421f5abb75abc4f" class="picture">
                         <h3>All I Want for Christmas is You</h3>
@@ -55,5 +58,6 @@
                 </li>
             </ol>
         </section>
+        <script src="SearchFor.js"></script>
     </body>
 </html>
