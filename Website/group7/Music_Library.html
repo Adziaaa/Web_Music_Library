@@ -38,71 +38,36 @@
 
 <div class="second class" id="addmusic">
     <p id="Filltheform"> Fill the form</p>
-            <label >Artist name:</label><br>
-    <form action="/action_page.php">
-    <input type="text" name="name">
+    <form id="musicForm" action="/action_page.php">
+        <label for="artistName">Artist name:</label><br>
+        <input type="text" id="artistName" name="name" required><br>
+
+        <label for="year">Year:</label><br>
+        <input type="number" id="year" name="year" required><br>
+
+        <label for="artists">Choose an artist:</label><br>
+        <select id="artists" name="artists" required>
+            <option value="">Select an artist</option>
+            <option value="justinBieber">Justin Bieber</option>
+            <option value="michaelJackson">Michael Jackson</option>
+            <option value="sabrinaCarpenter">Sabrina Carpenter</option>
+        </select><br>
+
+        <legend >Select an option:</legend>
+        <input type="radio" name="musicType" value="single" required><label>Single</label>
+        <input type="radio" name="musicType" value="ep"><label>EP</label>
+        <input type="radio" name="musicType" value="album"><label>Album</label><br>
+
+        <p>Comment</p>
+        <textarea id="comment" name="comment" required></textarea><br>
+
+        <label for="trackName">Track name:</label><br>
+        <input type="text" id="trackName" name="tracks" required><br>
+
+        <input type="submit" value="Submit" />
     </form>
-
-    <label >Year:</label><br>
-    <form action="/action_page.php">
-    <input type="number"  >
-    </form>
-    <br>
-    <form action="/action_page.php">
-    <select name="artists">
-    <option value="artist">Justin Biber</option>
-    <option value="singer">Michael Jackson</option>
-    <option value="singer">Sabrina Carpenter</option>
-    </select>
-    </form>
-    <br>
-
-
-    <form action="/action_page.php">
-        <legend>Select an option:</legend>
-    <input type="radio" /><label>Singiel</label>
-    <input type="radio" /><label>EP</label>
-    <input type="radio" /><label>Album</label>
-    
-    </form>
-
-    <br>
-
-    <p>Comment</p>
-    <textarea ></textarea>
-    <br>
-
-    <label >Tracks name:</label><br>
-    <form action="/action_page.php">
-    <input type="text" name="tracks">
-    </form>
-
-
-    <form>
-    <input type="submit" value="Submit"  />
-    </form>
-
-    
-</div>
 </div>
 
-
-
-<div>
-    <a href="./Web.html" >new page</a>
-</div>
-    
-
-
-
-
-
-
-<div>
-    <aside>
-add some Information  
-    </aside>
-</div>
 
 
 
