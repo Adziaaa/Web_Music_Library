@@ -3,5 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('searchFor');
+});
+
+Route::get('/Search', function () {
+    return view('searchFor');
 });
