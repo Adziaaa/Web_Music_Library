@@ -26,17 +26,31 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+        $request->validate([
+            'description' => 'nullable|string|max:1000',
+            'language' => 'in:English,Spanish',
+            'notify_on_new_song' => 'boolean',
+            'notify_on_new_message' => 'boolean',
+        ]);
+
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
+        
+        $request->user()->update([
+            'description' => $request->description,
+            'language' => ($request->filled('language') ? $request->language : $request->user()->language),
+            'notify_on_new_song' => $request->notify_on_new_song,
+            'notify_on_new_message' => $request->notify_on_new_message,
+        ]);
 
         $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
-
+    
     /**
      * Delete the user's account.
      */

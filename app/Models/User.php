@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'description',
+        'language',
+        'notify_on_new_song',
+        'notify_on_new_message',
     ];
 
     /**
