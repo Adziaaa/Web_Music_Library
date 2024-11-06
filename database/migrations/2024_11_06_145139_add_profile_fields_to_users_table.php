@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->text('description')->nullable();
-            $table->string('language')->default('English');
-            $table->boolean('notify_on_new_song')->default(false);
-            $table->boolean('notify_on_new_message')->default(false);
+            $table->boolean('notify_on_new_album')->default(false);
         });
     }
 
@@ -25,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['description', 'language', 'notify_on_new_song', 'notify_on_new_message']);
+            $table->dropColumn(['description', 'notify_on_new_album']);
         });
     }
 };

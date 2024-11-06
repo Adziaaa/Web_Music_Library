@@ -58,30 +58,6 @@
             <x-text-input id="created_at" name="created_at" type="text" class="mt-1 block w-full bg-gray-100 text-gray-500 cursor-not-allowed" :value="old('created_at', $user->created_at->format('F j, Y'))" readonly />
         </div>
 
-        <div>
-            <x-input-label for="language" :value="__('Language')" />
-            <div class="hidden mt-2 sm:flex sm:items-center">
-                <x-dropdown align="left">
-                    <x-slot name="trigger">
-                        <button type="button" class="inline-flex items-center px-3 py-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                            <div>{{ Auth::user()->language }}</div>
-
-                            <div class="ms-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
-                    <x-slot name="content">
-                        <x-dropdown-link href="#" onclick="event.preventDefault(); updateLanguage('English')">English</x-dropdown-link>
-                        <x-dropdown-link href="#" onclick="event.preventDefault(); updateLanguage('Spanish')">Spanish</x-dropdown-link>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-            <x-input-error class="mt-2" :messages="$errors->get('language')" />
-        </div>
-
         <div x-data="themeSwitcher" x-init="initializeTheme">
             <x-input-label for="theme" :value="__('Theme')" />
             <div class="hidden mt-2 sm:flex sm:items-center">
@@ -107,23 +83,11 @@
         <div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input type="hidden" name="notify_on_new_song" value="0">
-                    <input id="notify_on_new_song" name="notify_on_new_song" type="checkbox" value="1" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" {{ old('notify_on_new_song', $user->notify_on_new_song) ? 'checked' : '' }}>
+                    <input type="hidden" name="notify_on_new_album" value="0">
+                    <input id="notify_on_new_album" name="notify_on_new_album" type="checkbox" value="1" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" {{ old('notify_on_new_album', $user->notify_on_new_album) ? 'checked' : '' }}>
                 </div>
                 <div class="ml-3 text-sm">
-                    <x-input-label for="notify_on_new_song" :value="__('Notify me when followed artists release new songs')" />
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input type="hidden" name="notify_on_new_message" value="0">
-                    <input id="notify_on_new_message" name="notify_on_new_message" type="checkbox" value="1" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" {{ old('notify_on_new_message', $user->notify_on_new_message) ? 'checked' : '' }}>
-                </div>
-                <div class="ml-3 text-sm">
-                    <x-input-label for="notify_on_new_message" :value="__('Notify me when followed artists post new messages')" />
+                    <x-input-label for="notify_on_new_album" :value="__('Notify me when followed artists post new albums')" />
                 </div>
             </div>
         </div>
