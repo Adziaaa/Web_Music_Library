@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+  background-image: url(./images/searchFor_backgrounds.jpg);
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.searchBarSection{
+  align-items: center;
+  justify-content: center;
+  background-color:rgb(50, 59, 50);
+  border-radius: 0 0 70px 70px;
+  padding-top: 1%;
+  width: 100%;
+  height: 120px;
+  margin: auto;
+}
+
+.searchBar input[type="text"]{
+  display: inline;
+  justify-content: center;
+  margin:auto;
+  margin-left: 520px;
+  height: 25px;
+  width:30%;
+  padding: 5px;
+  padding-bottom: 0%;
+  border-radius: 10px;
+  padding-left: 25px;
+  background-size: 20px;
+  background-color: aliceblue;
+  min-width: 10%;
+}
+
+form.searchBar button{
+  display: inline;
+  float:inline-end;
+  margin:auto;
+  margin-right: 460px;
+  margin-top: -34px;
+  width: 5px;
+  padding: 10px;
+  border-radius: 30px;
+  padding-left: 25px;
+  background-size: 20px;
+  background-color: aliceblue;
+}
+
+.searchIcon{
+  display: inline;
+  float:inline-end;
+  margin:auto;
+  margin-right: -3px;
+  margin-top: -4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+}
+
+.HeadContainer{
+  display:block;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.button{
+  padding: 10px;
+  border-radius: 30px;
+  transition: background-color 0.2s ease-out 20ms
+}
+
+button[name="songs"], button[name="albums"], button[name="artists"]{
+  margin-right:20px;
+}
+
+.button:hover{
+  background-color: black;
+  color: aliceblue;
+}
+
+.button:visited{
+  background-color: black;
+  color: aliceblue;
+}
+
+.list{
+  display: flex;
+  padding: auto;
+  border-radius: 10px;
+  max-height: 2%;
+}
+
+.picture{
+  border-radius: 20px;
+  max-width: 150px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 100;
+  height: auto;
+  margin-right: 20px auto;
+  border-radius: 30px;
+  padding: 15px;
+  transition: transform 0.2s ease-out 20ms
+}
+
+.ArtistPicture{
+  border-radius: 50px;
+  max-width: 150px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 100;
+  height: auto;
+  margin-right: 20px auto;
+  padding: 15px;
+  transition: transform 0.2s ease-out 20ms
+}
+
+
+.container{
+  box-sizing: border-box;
+  color: aliceblue;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  grid-template-rows:auto auto;
+  align-items:flex-start;
+}
+
+.info{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  justify-content: center;
+  padding-top: 10%;
+  font-size: medium;
+  max-width: 400px;
+  padding-left: 30%;
+}
+
+.picture:hover, .ArtistPicture:hover{
+  transform: scale(1.2);
+}
+
+h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+p {
+  color: #ffffff;
+  line-height: 1.5;
+}
