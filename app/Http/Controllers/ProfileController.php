@@ -28,9 +28,7 @@ class ProfileController extends Controller
     {
         $request->validate([
             'description' => 'nullable|string|max:1000',
-            'language' => 'in:English,Spanish',
-            'notify_on_new_song' => 'boolean',
-            'notify_on_new_message' => 'boolean',
+            'notify_on_new_album' => 'boolean'
         ]);
 
         $request->user()->fill($request->validated());
@@ -41,9 +39,7 @@ class ProfileController extends Controller
         
         $request->user()->update([
             'description' => $request->description,
-            'language' => ($request->filled('language') ? $request->language : $request->user()->language),
-            'notify_on_new_song' => $request->notify_on_new_song,
-            'notify_on_new_message' => $request->notify_on_new_message,
+            'notify_on_new_album' => $request->notify_on_new_album,
         ]);
 
         $request->user()->save();

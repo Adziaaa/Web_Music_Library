@@ -22,9 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'description',
-        'language',
-        'notify_on_new_song',
-        'notify_on_new_message',
+        'notify_on_new_album',
     ];
 
     /**
