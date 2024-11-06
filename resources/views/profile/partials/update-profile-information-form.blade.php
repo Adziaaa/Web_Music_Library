@@ -99,7 +99,6 @@
                     <x-slot name="content">
                         <x-dropdown-link href="#" @click="setTheme('light')">{{ __('Light') }}</x-dropdown-link>
                         <x-dropdown-link href="#" @click="setTheme('dark')">{{ __('Dark') }}</x-dropdown-link>
-                        <x-dropdown-link href="#" @click="setTheme('system')">{{ __('System') }}</x-dropdown-link>
                     </x-slot>
                 </x-dropdown>
             </div>
@@ -162,7 +161,7 @@
 
     document.addEventListener('alpine:init', () => {
         Alpine.data('themeSwitcher', () => ({
-            themeLabel: localStorage.getItem('theme') === 'dark' ? 'Dark' : localStorage.getItem('theme') === 'light' ? 'Light' : 'System',
+            themeLabel: localStorage.getItem('theme') === 'dark' ? 'Dark' : 'Light',
 
             setTheme(theme) {
                 // Save the theme preference in localStorage
@@ -171,12 +170,8 @@
                 // Apply theme class to the document root
                 if (theme === 'dark') {
                     document.documentElement.classList.add('dark');
-                } else if (theme === 'light') {
-                    document.documentElement.classList.remove('dark');
                 } else {
-                    // Follow system preference
-                    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    document.documentElement.classList.toggle('dark', systemPrefersDark);
+                    document.documentElement.classList.remove('dark');
                 }
 
                 // Update label
