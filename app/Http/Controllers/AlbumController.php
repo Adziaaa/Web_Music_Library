@@ -1,16 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Album;
 
-class searchFor extends Controller
+class AlbumController extends Controller
 {
-    public function albumSearch($title, Request $request)
+    public function show($id)
     {
         $album = Album::findOrFail($id);
-
-        return view('albumPage', compact('title'));
+        return view('album', compact('album'));
     }
 }

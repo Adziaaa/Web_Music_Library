@@ -16,7 +16,7 @@ body{
   font-family: Arial, sans-serif;
 }
 
-.searchBarSection{
+.searchBarForm{
   position: relative;
   width: 100%;
   max-width: 500px; /* Set a max width */
@@ -67,7 +67,6 @@ body{
 }
 
 .dropdownItem span{
-  padding-top: 10%;
   text-align: center;
 }
 
@@ -87,4 +86,14 @@ body{
 
 .dropdownItem:hover {
   background-color: #f1f1f1;
+}
+
+.submit{
+  text-decoration: none;
+}
+
+.submit:visited{
+  text-decoration: none;
+  color: black;
+  text-underline-offset: none;
 }

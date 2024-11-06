@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('album', function (Blueprint $table){
+        Schema::table('albums', function (Blueprint $table) {
+            $table->string('id');
             $table->string('title');
             $table->string('albumTime');
             $table->string('artist');
             $table->integer('nrSongs');
+            $table->blob('image');
         });
     }
 
@@ -24,6 +26,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('albums', function (Blueprint $table) {
+            //
+        });
     }
 };
