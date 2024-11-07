@@ -7,10 +7,13 @@
 </head>
 <body>
     <h1>All Playlists</h1>
+
+    <a href="{{ route('playlist.create') }}" class="btn btn-primary">Create New Playlist</a>
+
     
     @foreach ($playlists as $playlist)
         <div>
-            <a href="{{ route('playlists.show', $playlist->id) }}">{{ $playlist->name }}</a>
+            <a href="{{ route('playlist.show', $playlist->id) }}">{{ $playlist->name }}</a>
         </div>
     @endforeach
 

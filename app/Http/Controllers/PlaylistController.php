@@ -1,31 +1,67 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Playlist;
+use App\Models\Song;
+use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
 {
-    // Method to show a single playlist
+    // single playlist
     public function show($id)
     {
-        // Find the playlist by ID or fail with a 404 error if not found
         $playlist = Playlist::findOrFail($id);
+        $songs = Song::all(); 
 
-        // Return the view and pass the playlist data to it
-        return view('playlists.show', compact('playlist'));
+        return view('playlist.show', compact('playlist', 'songs')); 
     }
 
-    // Method to list all playlists
+    // all playlists
     public function index()
     {
-        // Get all playlists from the database
+        // Get all playlists from db
         $playlists = Playlist::all();
 
         \Log::info('Playlists:', $playlists->toArray());
 
-
-        // Return the view and pass the playlists
+        // view and pass the playlists
         return view('playlist.index', compact('playlists'));
     }
-}
 
+    // create playlist form
+    public function create()
+    {
+        return view('playlist.create'); 
+    }
+
+    // new playlist
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        Playlist::create([
+            'name' => $request->name,
+            'user_id' => auth()->id(), 
+        ]);
+
+        return redirect()->route('playlist.index')->with('success', 'Playlist created successfully!');
+    }
+
+    // add song to playlist
+    public function addSong(Request $request, $playlistId)
+    {
+        $request->validate([
+            'song_id' => 'required|exists:songs,id', 
+        ]);
+
+        $playlist = Playlist::findOrFail($playlistId);
+
+        
+        $playlist->songs()->attach($request->song_id);
+
+        return redirect()->route('playlist.show', $playlistId)->with('success', 'Song added to playlist!');
+    }
+}

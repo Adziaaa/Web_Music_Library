@@ -23,7 +23,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('library.index') }}">Library</a>
                         </li>
-                            <a class="nav-link" href="{{ route('playlists.index') }}">Playlists</a>
+                            <a class="nav-link" href="{{ route('playlist.index') }}">Playlists</a>
                         </li>
                     </ul>
                 </div>

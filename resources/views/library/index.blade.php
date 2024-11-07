@@ -41,11 +41,11 @@
             @if($playlists && $playlists->count() > 0)
                 @foreach($playlists as $playlist)
                     <div class="playlist-card">
-                        <a href="{{ route('playlists.show', $playlist->id) }}" class="playlist-link">{{ $playlist->name }}</a>
+                        <a href="{{ route('playlist.show', $playlist->id) }}" class="playlist-link">{{ $playlist->name }}</a>
                     </div>
                 @endforeach
             @else
-                <p>You have no playlists.</p>
+                <p>You have no playlist.</p>
             @endif
         </div>
     </div>
