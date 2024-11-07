@@ -7,7 +7,7 @@ use App\Http\Controllers\PopularSong_Controller;
 use App\Http\Controllers\PopularArtistController;
 use App\Http\Controllers\AlbumController;
 
-class DashboardCOntroller extends Controller
+class HomeCOntroller extends Controller
 {
     public function show()
     {
@@ -15,6 +15,6 @@ class DashboardCOntroller extends Controller
         $popularartists = (new PopularArtistController)->show();
         $popularalbum = (new AlbumController)->show();
 
-        return view('dashboard', compact('popularsong', 'popularartists', 'popularalbum'));
+        return view('home', compact('popularsong', 'popularartists', 'popularalbum'));
     }
 }
