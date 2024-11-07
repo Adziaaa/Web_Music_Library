@@ -198,6 +198,42 @@
             align-items: center;
         }
 
+        .profile-menu {
+            position: relative;
+        }
+
+        .profile-menu img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: rgb(20, 20, 20);
+            color: #f1f1f1dc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px;
+            color: #e9e8e8e8;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #363434;
+        }
+
         .bottom {
             display: flex;
             flex-wrap: wrap;
@@ -315,16 +351,18 @@
         <div class="search">
             <input type="text" spellcheck="true" placeholder="What would you like to listen?">
         </div>
-        <div class="dropup">
-            <button class="prdropbtnofile">⛄</button>
-            <div class="dropup-content">
-                <a href="#">Account</a>
-                <a href="#">Support</a>
-                <a href="#">About</a>
-                <a href="#">Settings</a>
+        <div class="profile-menu">
+
+            <img onclick="toggleDropdown()" width="48" height="48"
+                src="https://img.icons8.com/color/48/test-account.png" alt="test-account" />
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="/profile">Profile</a>
+                <a href="/settings">Settings</a>
             </div>
         </div>
     </div>
+
 
     <div class="header">
         <p>Popular Songs</p>
@@ -335,7 +373,7 @@
                 @foreach ($songs as $item)
                     <div class="image-container">
                         <a>
-                            <img class="wave" src="data:image/jpeg;base64,{{ base64_encode($item->photo) }}">
+                            <img class="wave" src="{{ $item->image }}">
                         </a>
                         <p>{{ $item->name }}</p> <br>
                         <p>{{ $item->title }}</p>
@@ -361,7 +399,7 @@
                 @foreach ($albums as $item)
                     <div class="image-container">
                         <a>
-                            <img class="wave" src="data:image/jpeg;base64,{{ base64_encode($item->photo) }}">
+                            <img class="wave" src="{{ $item->image }}">
                         </a>
                         <p>{{ $item->name }}</p> <br>
                         <p>{{ $item->title }}</p>
@@ -386,7 +424,7 @@
                 @foreach ($artists as $item)
                     <div class="image-container">
                         <a>
-                            <img class="wave" src="data:image/jpeg;base64,{{ base64_encode($item->photo) }}">
+                            <img class="wave" src="{{ $item->image }}">
                         </a>
                         <p>{{ $item->name }}</p> <br>
                         <p>{{ $item->title }}</p>
@@ -501,4 +539,23 @@
         scrollContainer1.style.scrollBehavior = "smooth";
         scrollContainer1.scrollLeft -= 200;
     });
+
+
+
+    function toggleDropdown() {
+        var menu = document.getElementById("dropdownMenu");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.profile-menu img')) {
+            var dropdowns = document.getElementsByClassName("dropdown-menu");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === "block") {
+                    openDropdown.style.display = "none";
+                }
+            }
+        }
+    };
 </script>
