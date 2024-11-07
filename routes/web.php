@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AlbumController;
 use App\Models\PopularSong;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\PopularSong_Controller;
 use App\Http\Controllers\PopularArtistController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,3 +40,9 @@ Route::get('/test-songs', function () {
     $songs = PopularSong::table('songs')->get();
     return $songs;
 });
+
+
+
+Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
+
