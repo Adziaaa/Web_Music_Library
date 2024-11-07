@@ -7,16 +7,12 @@
 </head>
 <body>
     <h1>Create a New Playlist</h1>
-
-    <form action="{{ route('playlists.store') }}" method="POST">
+    <form action="{{ route('playlist.store') }}" method="POST">
         @csrf
         <label for="name">Playlist Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <!-- Assuming the user is logged in and user ID can be retrieved -->
-        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-
+        <input type="text" name="name" id="name" required>
         <button type="submit">Create Playlist</button>
     </form>
+
 </body>
 </html>

@@ -1,67 +1,67 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Playlist;
+use App\Models\Song;
+use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
 {
-    // Method to show a single playlist
+    // single playlist
     public function show($id)
     {
-        $playlists = Playlist::findOrFail($id);
-        $songs = Song::all(); // Fetch all available songs
-    
-        return view('playlists.show', compact('playlist', 'songs'));
-    }
-    
+        $playlist = Playlist::findOrFail($id);
+        $songs = Song::all(); 
 
-    // Method to list all playlists
+        return view('playlist.show', compact('playlist', 'songs')); 
+    }
+
+    // all playlists
     public function index()
     {
-        // Get all playlists from the database
+        // Get all playlists from db
         $playlists = Playlist::all();
 
         \Log::info('Playlists:', $playlists->toArray());
 
-
-        // Return the view and pass the playlists
+        // view and pass the playlists
         return view('playlist.index', compact('playlists'));
     }
 
+    // create playlist form
     public function create()
     {
-        return view('playlists.create'); // Create a form view for creating playlists
+        return view('playlist.create'); 
     }
 
+    // new playlist
     public function store(Request $request)
     {
         $request->validate([
-        'name' => 'required|string|max:255',
-        'user_id' => 'required|exists:users,id', // Ensure user ID is valid
-    ]);
+            'name' => 'required|string|max:255',
+        ]);
 
-    // Create the playlist
-    $playlist = Playlist::create([
-        'name' => $request->name,
-        'user_id' => $request->user_id,
-    ]);
+        Playlist::create([
+            'name' => $request->name,
+            'user_id' => auth()->id(), 
+        ]);
 
-    return redirect()->route('playlists.show', $playlist->id)->with('success', 'Playlist created successfully!');
+        return redirect()->route('playlist.index')->with('success', 'Playlist created successfully!');
     }
 
-        public function addSong(Request $request, $playlistId)
+    // add song to playlist
+    public function addSong(Request $request, $playlistId)
     {
         $request->validate([
-            'song_id' => 'required|exists:songs,id', // Ensure the song ID is valid
+            'song_id' => 'required|exists:songs,id', 
         ]);
 
         $playlist = Playlist::findOrFail($playlistId);
 
-        // Attach the selected song to the playlist
+        
         $playlist->songs()->attach($request->song_id);
 
-        return redirect()->route('playlists.show', $playlistId)->with('success', 'Song added to playlist!');
+        return redirect()->route('playlist.show', $playlistId)->with('success', 'Song added to playlist!');
     }
-
 }
-

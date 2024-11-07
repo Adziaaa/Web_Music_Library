@@ -17,7 +17,7 @@
     </ul>
 
     <!-- Form to add a new song to the playlist -->
-    <form action="{{ route('playlists.addSong', $playlist->id) }}" method="POST">
+    <form action="{{ route('playlist.addSong', $playlist->id) }}" method="POST">
         @csrf
         <label for="song_id">Add Song to Playlist:</label>
         <select name="song_id" id="song_id">

@@ -11,7 +11,7 @@
             <div class="playlist-list">
                 @foreach($playlists as $playlist)
                     <div class="playlist-card">
-                        <a href="{{ route('playlists.show', $playlist->id) }}">{{ $playlist->name }}</a>
+                        <a href="{{ route('playlist.show', $playlist->id) }}">{{ $playlist->name }}</a>
                     </div>
                 @endforeach
             </div>
