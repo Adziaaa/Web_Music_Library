@@ -335,7 +335,7 @@
                 @foreach ($songs as $item)
                     <div class="image-container">
                         <a>
-                            <img class="wave" src="data:image/jpeg;base64,{{ base64_encode($item->photo) }}">
+                            <img class="wave" src="{{ $item->image }}">
                         </a>
                         <p>{{ $item->name }}</p> <br>
                         <p>{{ $item->title }}</p>
@@ -361,7 +361,7 @@
                 @foreach ($albums as $item)
                     <div class="image-container">
                         <a>
-                            <img class="wave" src="data:image/jpeg;base64,{{ base64_encode($item->photo) }}">
+                            <img class="wave" src="{{ $item->image }}">
                         </a>
                         <p>{{ $item->name }}</p> <br>
                         <p>{{ $item->title }}</p>
@@ -386,7 +386,7 @@
                 @foreach ($artists as $item)
                     <div class="image-container">
                         <a>
-                            <img class="wave" src="data:image/jpeg;base64,{{ base64_encode($item->photo) }}">
+                            <img class="wave" src="{{ $item->image }}">
                         </a>
                         <p>{{ $item->name }}</p> <br>
                         <p>{{ $item->title }}</p>

@@ -73,12 +73,20 @@
                                 padding: 10px 0;
                             }
 
+                            footer{
+                                background: white;
+                            }
+
                             footer marquee {
                                 width: 100%;
                             }
                         </style>
                     </head>
-                    <div class="bottom">
+                    
+
+                    <div class="end">
+                        <footer>
+                        <div class="bottom">
                         <div class="bottom-section">
                             <h4>Company</h4>
                             <ul>
@@ -102,9 +110,6 @@
                             </ul>
                         </div>
                     </div>
-
-                    <div class="end">
-                        <footer>
                             <marquee>
                                 <p>©2024 Made by Group 7 | All Rights Reserved</p>
                             </marquee>
