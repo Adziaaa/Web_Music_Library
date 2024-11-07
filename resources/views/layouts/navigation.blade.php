@@ -16,6 +16,20 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                <!-- Search Bar -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <link rel="stylesheet" href="./SearchFor/SearchFor.css" />
+                    @csrf
+                    <form id="searchBarForm" class="searchBarForm" action="/album/" method="POST">
+                    <input id="searchBar"  type="text" placeholder="Search..." class="searchBar" oninput="searchMusic()"><br>
+                    <div class="dropdown" id="dropdown">
+                        <!-- Search results will appear here -->
+                    </div>
+                    </form>
+                    <script src="./SearchFor/SearchFor.js"></script>
+                </div>
+
             </div>
 
             <!-- Settings Dropdown -->
