@@ -18,10 +18,10 @@
                 @endforeach
             </div>
             <div class="gallery-wrap left">
-                <button id="backBtn{{ $loop->index }}">⬅️</button>
+                <button id="backBtn_{{ $title }}">⬅️</button>
             </div>
             <div class="gallery-wrap right">
-                <button id="nextBtn{{ $loop->index }}">➡️</button>
+                <button id="nextBtn_{{ $title }}">➡️</button>
             </div>
         </div>
     </div>
@@ -60,6 +60,4 @@
     </footer>
 </div>
 
-@push('scripts')
 <script src="{{ asset('js/musicGallery.js') }}"></script>
-@endpush
