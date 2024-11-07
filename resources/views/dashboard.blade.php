@@ -28,52 +28,6 @@
                                 color: white;
                             }
 
-                            .container {
-                                display: flex;
-                                padding: 15px;
-                                background-color: black;
-                                align-items: center;
-                                justify-content: space-between;
-                                height: 60px;
-                                box-sizing: border-box;
-                            }
-
-                            .search {
-                                flex-grow: 1;
-                                display: flex;
-                                justify-content: center;
-                            }
-
-                            input[type="text"] {
-                                width: 40%;
-                                padding: 10px;
-                                border: 1px solid #ccc;
-                                border-radius: 4px;
-                            }
-
-                            .logo {
-                                display: flex;
-                                align-items: center;
-                            }
-
-                            .logo img {
-                                width: 50px;
-                                height: 50px;
-                                margin-right: 10px;
-                            }
-
-                            .header {
-                                text-align: left;
-                                padding-left: 50px;
-                                margin: 20px 0 5px;
-                            }
-
-                            .popular {
-                                display: flex;
-                                flex-wrap: wrap;
-                                justify-content: space-between;
-                                margin-top: 20px;
-                            }
 
                             .bottom {
                                 display: flex;
