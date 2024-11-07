@@ -37,10 +37,10 @@ public function store(Request $request)
     $photo = $request->file('photo');
     $photoData = file_get_contents($photo);
 
-    $popularartists = new PopularArtist();
-    $popularartists->name = $request->name;
-    $popularartists->photo = $photoData;
-    $popularartists->save();
+    $artists = new PopularArtist();
+    $artists->name = $request->name;
+    $artists->photo = $photoData;
+    $artists->save();
 }
 
 

@@ -34,11 +34,11 @@ public function store(Request $request)
     $photo = $request->file('photo');
     $photoData = file_get_contents($photo);
 
-    $popularalbum = new Album();
-    $popularalbum->name = $request->name;
-    $popularalbum->title = $request->title;
-    $popularalbum->photo = $photoData;
-    $popularalbum->save();
+    $albums = new Album();
+    $albums->name = $request->name;
+    $albums->title = $request->title;
+    $albums->photo = $photoData;
+    $albums->save();
 }
 
 

@@ -20,8 +20,7 @@ Route::get('/home', [HomeCOntroller::class, 'show']);
 
 
 
-
-Route::get('/test-popularsong', function () {
-    $songs = PopularSong::table('popularsong')->get();
+Route::get('/test-songs', function () {
+    $songs = PopularSong::table('songs')->get();
     return $songs;
 });

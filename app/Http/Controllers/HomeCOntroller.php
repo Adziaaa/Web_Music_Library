@@ -11,10 +11,10 @@ class HomeCOntroller extends Controller
 {
     public function show()
     {
-        $popularsong = (new PopularSong_Controller)->show();
-        $popularartists = (new PopularArtistController)->show();
-        $popularalbum = (new AlbumController)->show();
+        $songs = (new PopularSong_Controller)->show();
+        $artists = (new PopularArtistController)->show();
+        $albums = (new AlbumController)->show();
 
-        return view('home', compact('popularsong', 'popularartists', 'popularalbum'));
+        return view('home', compact('songs', 'artists', 'albums'));
     }
 }

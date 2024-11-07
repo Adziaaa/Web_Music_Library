@@ -332,7 +332,7 @@
     <div class="popular">
         <div class="gallery-container">
             <div class="gallery">
-                @foreach ($popularsong as $item)
+                @foreach ($songs as $item)
                     <div class="image-container">
                         <a>
                             <img class="wave" src="data:image/jpeg;base64,{{ base64_encode($item->photo) }}">
@@ -358,7 +358,7 @@
     <div class="popular">
         <div class="gallery-container">
             <div class="gallery1">
-                @foreach ($popularalbum as $item)
+                @foreach ($albums as $item)
                     <div class="image-container">
                         <a>
                             <img class="wave" src="data:image/jpeg;base64,{{ base64_encode($item->photo) }}">
@@ -383,7 +383,7 @@
     <div class="popular">
         <div class="gallery-container">
             <div class="gallery2">
-                @foreach ($popularartists as $item)
+                @foreach ($artists as $item)
                     <div class="image-container">
                         <a>
                             <img class="wave" src="data:image/jpeg;base64,{{ base64_encode($item->photo) }}">

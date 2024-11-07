@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class PopularSong extends Model
 {
     use HasFactory;
-    protected $table = 'popularsong';
+    protected $table = 'songs';
     protected $primary = 'id';
     protected $fillable = ['name','title','photo'];
 
