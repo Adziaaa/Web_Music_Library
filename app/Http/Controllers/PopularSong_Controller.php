@@ -1,21 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Album;
 
-class AlbumController extends Controller
+use App\Models\PopularSong;
+use Illuminate\Http\Request;
+
+class PopularSong_Controller extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function show()
     {
-        return Album::all();
-    }
-
-    public function find($id)
-    {
-        $album = Album::findOrFail($id);
-        return view('album', compact('album'));
+        return PopularSong::all();
     }
 
     public function index()
@@ -40,11 +37,11 @@ public function store(Request $request)
     $photo = $request->file('photo');
     $photoData = file_get_contents($photo);
 
-    $albums = new Album();
-    $albums->name = $request->name;
-    $albums->title = $request->title;
-    $albums->photo = $photoData;
-    $albums->save();
+    $popularSong = new PopularSong();
+    $popularSong->name = $request->name;
+    $popularSong->title = $request->title;
+    $popularSong->photo = $photoData;
+    $popularSong->save();
 }
 
 
