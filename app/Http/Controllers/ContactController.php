@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     public function showContactForm()
     {
-        return view('contact'); // This should match the name of your Blade file
+        return view('contact'); 
     }
 
     public function sendEmail(Request $request)

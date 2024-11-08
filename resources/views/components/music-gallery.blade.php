@@ -37,7 +37,7 @@
         </ul>
     </div>
     <div class="bottom-section">
-        <h4>Help</h4>
+        <h4><a href="">Help</a></h4>
         <ul>
             <li><a href="#">Q&A</a></li>
             <li><a href="#">Sign up</a></li>
