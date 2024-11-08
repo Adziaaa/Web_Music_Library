@@ -91,3 +91,9 @@ footer marquee {
 .rules {
     padding: 60px;
 }
+
+#rules {
+    text-align: left;
+    font-size: 21px;
+    margin: 0px;
+}
