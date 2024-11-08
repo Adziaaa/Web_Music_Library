@@ -10,6 +10,13 @@
     width: 150px;
 }
 
+.wave:hover {
+    height: 155px;
+    width: 155px;
+    padding: 7px;
+    background-color: white;
+}
+
 .image-container {
     text-align: center;
     width: 150px;
