@@ -16,7 +16,7 @@
     margin: 5px;
     display: inline-block;
     flex-shrink: 0;
-    
+
 }
 
 .image-container img {
@@ -57,6 +57,7 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+
 
 .gallery,
 .gallery1,
@@ -250,4 +251,10 @@ footer marquee {
 #backBtn2:hover,
 #nextBtn2:hover {
     background-color: #050505;
+}
+
+body {
+    background: linear-gradient(to bottom, #00203f, #000);
+    min-height: 100vh;
+    /* Ensures it covers full viewport height */
 }
