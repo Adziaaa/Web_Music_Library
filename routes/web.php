@@ -46,3 +46,5 @@ Route::get('/test-songs', function () {
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
 Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
 
+Route::get('/websiteRegulations', [HomeController::class, 'rules'])->name('websiteRegulations');
+

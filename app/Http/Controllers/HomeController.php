@@ -30,4 +30,8 @@ class HomeController extends Controller
 
         return view('dashboard', compact('songs', 'albums', 'artists'));
     }
+    public function rules()
+    {
+        return view('websiteRegulations'); // Ensure this view file exists
+    }
 }

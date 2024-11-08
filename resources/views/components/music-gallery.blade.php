@@ -33,14 +33,14 @@
         <ul>
             <li><a href="#">About us</a></li>
             <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">Affiliate program</a></li>
+            <li><a href="{{ route('websiteRegulations') }}">View Website Regulations</a>
+            </li>
         </ul>
     </div>
     <div class="bottom-section">
         <h4><a href="{{ route('contact.form') }}">Help</a></h4>
         <ul>
             <li><a href="#">Q&A</a></li>
-            <li><a href="#">Sign up</a></li>
         </ul>
     </div>
     <div class="bottom-section">
