@@ -1,3 +1,4 @@
+<x-app-layout>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,21 +13,6 @@
 
 </head>
 <body>
-    <header class="header">
-        <div class="header-logo">
-            <a href="{{ url('/') }}">
-                <img src="{{ asset('images/logo.png') }}" alt="Home">
-            </a>
-        </div>
-        <div class="profile-menu">
-            <img src="{{ asset('images/profile.png') }}" alt="Profile" onclick="toggleDropdown()">
-            <div class="dropdown-menu" id="dropdownMenu">
-                <a href="/profile">Profile</a>
-                <a href="/settings">Settings</a>
-            </div>
-        </div>
-    </header>
-
 <main class="main-content">
 <section class="common">
             <h1>COMMON Q&A's </h1>
@@ -102,3 +88,4 @@
     <script src="{{ asset('js/support.js') }}"></script>
 </body>
 </html>
+</x-app-layout>

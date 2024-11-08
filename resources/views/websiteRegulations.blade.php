@@ -1,3 +1,4 @@
+<x-app-layout>
 <link rel="stylesheet" href="{{ asset('css/websiteRegulations.css') }}">
 
 <div class=" rules">
@@ -82,3 +83,4 @@
         </marquee>
     </footer>
 </div>
+</x-app-layout>
