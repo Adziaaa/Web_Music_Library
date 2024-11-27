@@ -10,9 +10,11 @@ use App\Http\Controllers\PopularSong_Controller;
 use App\Http\Controllers\PopularArtistController;
 use App\Http\Controllers\ContactController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
