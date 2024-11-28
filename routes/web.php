@@ -43,7 +43,7 @@ Route::get('/test-songs', function () {
     return $songs;
 });
 
-Route::get('/contact', [HomeController::class, 'contact'])->middleware(['auth'])->name('login');
+Route::get('/contact', [HomeController::class, 'contact'])->middleware(['auth'])->name('contact');
 
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
 Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
