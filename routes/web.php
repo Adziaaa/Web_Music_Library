@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/home', [HomeCOntroller::class, 'show']);
+// Route::get('/home', [HomeCOntroller::class, 'show']);
 
 Route::get('/test-songs', function () {
     $songs = PopularSong::table('songs')->get();
@@ -50,3 +50,20 @@ Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.
 
 Route::get('/websiteRegulations', [HomeController::class, 'rules'])->name('websiteRegulations');
 
+Route::get('/guest-login', function () {
+    $guestUser = \App\Models\User::where('email', 'guest@guest.com')->first();
+    Auth::login($guestUser);
+    return redirect('/dashboard'); // Redirect to the desired page after login
+})->name('guest.login');
+
+Route::middleware(['auth', 'check.guest'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/album/{id}', [AlbumController::class, 'find'])->name('album');
+
+    Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile');
+
+    Route::get('/playlist/{id}', [PlaylistController::class, 'show'])->name('playlist');
+});

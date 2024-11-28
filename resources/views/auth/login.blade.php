@@ -44,4 +44,11 @@
             </x-primary-button>
         </div>
     </form>
+
+    <!-- Login as GUEST -->
+    <form method="GET" action="{{ route('guest.login') }}" class="mt-4">
+        <x-primary-button class="btn btn-secondary">
+            {{ __('Log in as GUEST') }}
+        </x-primary-button>
+    </form>
 </x-guest-layout>
