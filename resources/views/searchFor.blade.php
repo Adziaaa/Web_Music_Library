@@ -8,7 +8,7 @@
     </head>
     <body>
         <form id="searchBarForm" class="searchBarForm" action="/album/" method="POST">
-          <input id="searchBar"  type="text" placeholder="Search..." class="searchBar" oninput="searchMusic()"><br>
+          <textarea id="searchBar"  type="text" placeholder="Search..." class="searchBar" oninput="searchMusic()"><br>
           <div class="dropdown" id="dropdown">
             <!-- Search results will appear here -->
           </div>

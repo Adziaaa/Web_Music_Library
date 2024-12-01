@@ -30,9 +30,9 @@ body{
   background-position: 14px 10px;
   background-repeat: no-repeat;
   justify-content: center;
-  width: 100%;
   padding: 10px;
   padding-left: 50px;
+  padding-right: 315px;
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 4px;
