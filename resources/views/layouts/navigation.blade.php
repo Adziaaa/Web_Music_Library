@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between h-16 mb-2">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -30,11 +30,11 @@
                     </x-nav-link>
                 </div>
                 <!-- Search Bar -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex pt-2 ">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex pt-4 ">
                     <link rel="stylesheet" href="./SearchFor/SearchFor.css" />
                     @csrf
-                    <form id="searchBarForm" class="searchBarForm " action="/album/" method="POST">
-                        <input id="searchBar" type="text" placeholder="Search..." class="searchBar"
+                    <form id="searchBarForm" class="searchBarForm" action="/album/" method="POST">
+                        <input id="searchBar" type="text" placeholder="Search..." class="searchBar w-full max-w-lg px-4 py-2"
                             oninput="searchMusic()"><br>
                         <div class="dropdown" id="dropdown">
                             <!-- Search results will appear here -->
