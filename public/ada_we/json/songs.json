@@ -1,0 +1,121 @@
+{
+    "Please": {
+        "artist": "Sabrina Carpenter",
+        "year": 2024,
+        "genre": "pop",
+        "rating": "★★★★☆",
+        "description": "A catchy pop anthem that captures the struggle of pursuing your dreams while juggling life’s demands."
+    },
+    "7_rings": {
+        "artist": "Ariana Grande",
+        "year": 2019,
+        "genre": "pop",
+        "rating": "★★★★★",
+        "description": "A bold, self-empowered pop track celebrating wealth, independence, and friendship, with a catchy hook and luxurious vibes."
+    },
+    "All_I_want": {
+        "artist": "Mariah Carey",
+        "year": 2021,
+        "genre": "pop",
+        "rating": "★★★★☆",
+        "description": "A soulful ballad that highlights Mariah's iconic vocal range, touching on themes of longing and romantic yearning."
+    },
+    "Jupiter_and_Mars": {
+        "artist": "Square a Saw",
+        "year": 2023,
+        "genre": "alternative rock",
+        "rating": "★★★★☆",
+        "description": "An atmospheric rock song that takes the listener on a celestial journey with dreamy guitar riffs and introspective lyrics."
+    },
+    "Alive": {
+        "artist": "Songwriterz",
+        "year": 2016,
+        "genre": "pop",
+        "rating": "★★★★★",
+        "description": "An uplifting song about overcoming life's challenges, featuring powerful vocals and a driving melody."
+    },
+    "Always_Waiting": {
+        "artist": "Okay Boomhauer",
+        "year": 2018,
+        "genre": "jazz",
+        "rating": "★★★★☆",
+        "description": "A smooth jazz track that conveys the feelings of anticipation and hope with a soothing saxophone and laid-back groove."
+    },
+    "Erase": {
+        "artist": "Maury111",
+        "year": 2020,
+        "genre": "electronic",
+        "rating": "★★★☆☆",
+        "description": "A high-energy electronic song about moving forward and forgetting the past, with pulsing beats and vibrant synths."
+    },
+    "Dame_Mas": {
+        "artist": "Alfonso Lugo",
+        "year": 2022,
+        "genre": "latin pop",
+        "rating": "★★★★☆",
+        "description": "A lively Latin pop track that mixes catchy rhythms and a playful melody, perfect for dancing."
+    },
+    "Good_Morning": {
+        "artist": "Ekout",
+        "year": 2017,
+        "genre": "soul",
+        "rating": "★★★★☆",
+        "description": "A soulful track with uplifting lyrics that make it a perfect morning pick-me-up, combining smooth vocals and a jazzy beat."
+    },
+    "Goodbar_Good_Night": {
+        "artist": "The Spin Wires",
+        "year": 2019,
+        "genre": "funk",
+        "rating": "★★★★★",
+        "description": "An energetic funk song that captures the excitement of nightlife with a catchy bassline and groovy rhythm."
+    },
+    "I_Got_a_Boy": {
+        "artist": "Bessonn&sa",
+        "year": 2013,
+        "genre": "K-pop",
+        "rating": "★★★★★",
+        "description": "A vibrant K-pop song with a mix of rap and melodic vocals, known for its upbeat tempo and catchy chorus."
+    },
+    "Love_of_My_Life": {
+        "artist": "Ben Lvcas",
+        "year": 1975,
+        "genre": "rock",
+        "rating": "★★★★★",
+        "description": "A classic rock ballad that remains timeless, featuring heartfelt lyrics and emotional guitar solos."
+    },
+    "Mr_Rock": {
+        "artist": "Rising Bones",
+        "year": 2022,
+        "genre": "rock",
+        "rating": "★★★☆☆",
+        "description": "A modern rock song with a catchy riff and upbeat lyrics, embodying the spirit of contemporary rock."
+    },
+    "Reason_to_Stay": {
+        "artist": "Alessia Cara",
+        "year": 2020,
+        "genre": "pop",
+        "rating": "★★★★☆",
+        "description": "A reflective pop song with emotional lyrics about love and the challenges of staying in a relationship."
+    },
+    "Stranger_Things": {
+        "artist": "Dolo Tonight",
+        "year": 2022,
+        "genre": "alternative",
+        "rating": "★★★★☆",
+        "description": "A moody, alternative track with a haunting melody that explores themes of feeling out of place and finding one's identity."
+    },
+    "Use": {
+        "artist": "Arna Maeve",
+        "year": 2019,
+        "genre": "electronic pop",
+        "rating": "★★★☆☆",
+        "description": "A catchy electronic pop song that’s perfect for the dance floor, with an infectious beat and memorable lyrics."
+    },
+    "Fire_fighter": {
+        "artist": "Stefan Kartenberg",
+        "year": 2019,
+        "genre": "electronic pop",
+        "rating": "★★★☆☆",
+        "description": "An energetic electronic pop track with a fiery beat, symbolizing resilience and strength in the face of adversity."
+    }
+}

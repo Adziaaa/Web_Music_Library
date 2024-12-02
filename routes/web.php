@@ -67,3 +67,11 @@ Route::middleware(['auth', 'check.guest'])->group(function () {
 
     Route::get('/playlist/{id}', [PlaylistController::class, 'show'])->name('playlist');
 });
+
+Route::get('/playlist', function () {
+    return view('player');
+})->name('playlist');
+
+Route::get('/read',function ()
+{return view('read');}
+);
