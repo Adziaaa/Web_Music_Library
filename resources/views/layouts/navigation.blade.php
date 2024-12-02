@@ -30,10 +30,10 @@
                     </x-nav-link>
                 </div>
                 <!-- Search Bar -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex pt-2 ">
                     <link rel="stylesheet" href="./SearchFor/SearchFor.css" />
                     @csrf
-                    <form id="searchBarForm" class="searchBarForm" action="/album/" method="POST">
+                    <form id="searchBarForm" class="searchBarForm " action="/album/" method="POST">
                         <input id="searchBar" type="text" placeholder="Search..." class="searchBar"
                             oninput="searchMusic()"><br>
                         <div class="dropdown" id="dropdown">

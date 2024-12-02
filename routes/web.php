@@ -18,9 +18,11 @@ Route::get('/', [HomeController::class, 'dashboard'])->middleware(['auth'])->nam
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
+    Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
+    Route::get('/websiteRegulations', [HomeController::class, 'rules'])->name('websiteRegulations');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -43,12 +45,7 @@ Route::get('/test-songs', function () {
     return $songs;
 });
 
-Route::get('/contact', [HomeController::class, 'contact'])->middleware(['auth'])->name('contact');
-
-Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
-Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
-
-Route::get('/websiteRegulations', [HomeController::class, 'rules'])->name('websiteRegulations');
+#Route::get('/contact', [HomeController::class, 'contact'])->middleware(['auth'])->name('contact');
 
 Route::get('/guest-login', function () {
     $guestUser = \App\Models\User::where('email', 'guest@guest.com')->first();
