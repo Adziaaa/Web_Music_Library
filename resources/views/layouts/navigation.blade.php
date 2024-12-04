@@ -1,3 +1,6 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,16 +36,20 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <link rel="stylesheet" href="./SearchFor/SearchFor.css" />
                     @csrf
-                    <form id="searchBarForm" class="searchBarForm" action="/album/" method="POST">
-                        <input id="searchBar" type="text" placeholder="Search..." class="searchBar"
-                            oninput="searchMusic()"><br>
-                        <div class="dropdown" id="dropdown">
-                            <!-- Search results will appear here -->
+                    <form id="searchBarForm" class="searchBarForm" action="javascript:void(0);">
+                        <input 
+                            id="searchBar" 
+                            type="text" 
+                            placeholder="Search..." 
+                            class="searchBar" 
+                            oninput="searchMusic()" 
+                        />
+                        <div class="dropdown" id="dropdown" style="display: none;">
+                            <!-- Search results will appear here dynamically -->
                         </div>
                     </form>
                     <script src="./SearchFor/SearchFor.js"></script>
                 </div>
-
             </div>
 
             <!-- Settings Dropdown -->
