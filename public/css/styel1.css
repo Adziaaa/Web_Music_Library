@@ -4,20 +4,33 @@
     padding: 0;
 }
 
-
-
+body {
+    color: white;
+    margin: 0;
+    background: linear-gradient(135deg, rgb(25, 25, 112), rgb(0, 0, 50));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+}
 
 .music-container {
-    margin-top: 30px;
-    background-color: #04080b;
+    background-color: #36454F;
     border-radius: 17px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    padding: 20px 10px;
+    margin: 100px 100px 50px 100px;
+    z-index: 10;
+    width: 80%;
+    position: relative;
     transition: transform 0.3s ease-in-out;
-}
 
+}
 
 .music-info {
     color: #c7ccd1;
@@ -154,7 +167,6 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     font-weight: bold;
-    margin-bottom: 30px;
 }
 
 #playlistBtn:hover {
@@ -237,8 +249,7 @@ change it !!!
 }
 
 .song-card {
-    background-color: #111e2a;
-    color: white;
+    background-color: #0e161e;
     padding: 15px;
     border-radius: 17px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -324,53 +335,4 @@ a {
     transition: background-color 0.3s ease, transform 0.2s ease;
     transform: scale(1.1);
 
-}
-
-.bottom {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: black;
-    color: white;
-    padding: 20px;
-
-}
-
-.bottom-section {
-    flex: 1;
-    margin: 0 20px;
-}
-
-.bottom-section h4 {
-    margin-bottom: 10px;
-}
-
-.bottom-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.bottom-section ul li {
-    margin-bottom: 10px;
-}
-
-.bottom-section ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.bottom-section ul li a:hover {
-    text-decoration: underline;
-}
-
-.end {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    padding: 10px 0;
-}
-
-footer marquee {
-    width: 100%;
 }
