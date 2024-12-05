@@ -14,21 +14,50 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
-            $query = $request->input('query');
+        $query = $request->input('query');
 
         if (empty($query)) {
-            return response()->json([], 200); // Return empty JSON if no query
+            return response()->json([
+                'songs' => [],
+                'albums' => [],
+                'artists' => [],
+                //'playlists' => [],
+                'profiles' => [],
+            ], 200);
         }
-
+    
         try {
-            // Search across songs, albums, artists, playlists, and profiles
-            $songs = PopularSong::where('title', 'like', '%' . $query . '%')->limit(5)->get(['id', 'title', 'artist_id', 'image']);
-            $albums = Album::where('title', 'like', '%' . $query . '%')->limit(5)->get(['id', 'title', 'artist_id', 'image']);
-            $artists = PopularArtist::where('name', 'like', '%' . $query . '%')->limit(5)->get(['id', 'name', 'image']);
-            //$playlists = Playlist::where('name', 'like', '%' . $query . '%')->limit(5)->get(['id', 'name', 'image']);
-            $profiles = User::where('name', 'like', '%' . $query . '%')->limit(5)->get(['id', 'name']);
-
-            // Combine results into a single response
+            $query = trim($query); // Clean up the input
+    
+            $songs = PopularSong::whereRaw('LOWER(title) = ?', [$query])
+                ->orWhereRaw('LOWER(title) LIKE ?', ["{$query}%"])
+                ->distinct()
+                ->limit(3)
+                ->get(['id', 'title', 'artist_id', 'image']);
+            
+            $albums = Album::whereRaw('LOWER(title) = ?', [$query])
+                ->orWhereRaw('LOWER(title) LIKE ?', ["{$query}%"])
+                ->distinct()
+                ->limit(3)
+                ->get(['id', 'title', 'artist_id', 'image']);
+            
+            $artists = PopularArtist::whereRaw('LOWER(name) = ?', [$query])
+                ->orWhereRaw('LOWER(name) LIKE ?', ["{$query}%"])
+                ->distinct()
+                ->limit(3)
+                ->get(['id', 'name', 'image']);
+            
+            /*$playlists = Playlist::whereRaw('LOWER(name) = ?', [$query])
+                ->orWhereRaw('LOWER(title) LIKE ?', ["{$query}%"])
+                ->limit(5)
+                ->get(['id', 'name', 'image']);*/
+            
+            $profiles = User::whereRaw('LOWER(name) LIKE ?', ["%{$query}%"])
+                ->orWhereRaw('LOWER(name) LIKE ?', ["{$query}%"])
+                ->distinct()
+                ->limit(3)
+                ->get(['id', 'name']);
+    
             return response()->json([
                 'songs' => $songs,
                 'albums' => $albums,
@@ -37,8 +66,14 @@ class SearchController extends Controller
                 'profiles' => $profiles,
             ], 200);
         } catch (\Exception $e) {
-            // Return a JSON error response for debugging
-            return response()->json(['error' => $e->getMessage()], 500);
+            return response()->json([
+                'error' => $e->getMessage(),
+                'songs' => [],
+                'albums' => [],
+                'artists' => [],
+                //'playlists' => [],
+                'profiles' => [],
+            ], 500);
         }
     }
 }
