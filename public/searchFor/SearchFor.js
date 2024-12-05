@@ -16,9 +16,20 @@ function searchMusic() {
 
     if (query.length === 0) return; // If input is empty, clear the dropdown
 
-    // Check if query exists in cache
+    // Check if query exists in cache or is a subset of a previous query
+    const cachedKeys = Object.keys(queryCache);
+    const matchingKey = cachedKeys.find(key => key.startsWith(query));
+
     if (queryCache[query]) {
-        renderResults(queryCache[query]); // Use cached results
+        // Exact match found in cache
+        renderResults(queryCache[query]);
+        return;
+    } else if (matchingKey) {
+        // Query is a subset of a cached query
+        const subsetResults = queryCache[matchingKey].filter(item =>
+            item.title.toLowerCase().includes(query) || item.name?.toLowerCase().includes(query)
+        );
+        renderResults(subsetResults);
         return;
     }
 
@@ -39,19 +50,18 @@ function renderResults(data) {
     const songs = data.songs || [];
     const albums = data.albums || [];
     const artists = data.artists || [];
-    //const playlists = data.playlists || [];
     const profiles = data.profiles || [];
 
     const allResults = [
         ...songs.map(item => ({ ...item, type: 'song' })),
         ...albums.map(item => ({ ...item, type: 'album' })),
         ...artists.map(item => ({ ...item, type: 'artist' })),
-        //...playlists.map(item => ({ ...item, type: 'playlist' })),
         ...profiles.map(item => ({ ...item, type: 'profile' }))
     ];
-
-    const uniqueResults = [];
+    
+    dropdown.innerHTML='';
     const seenIds = new Set();
+    const uniqueResults = [];
 
     allResults.forEach(result => {
         const uniqueKey = `${result.type}-${result.id}`;
@@ -86,10 +96,6 @@ function renderResults(data) {
                     text.textContent = `${result.name} - ${result.type}`;
                     text.href = `/artist/${result.id}`;
                     break;
-                /*case 'playlist':
-                    text.textContent = `${result.name} - ${result.type}`;
-                    text.href = `/playlist/${result.id}`;
-                    break;*/
                 case 'profile':
                     text.textContent = `${result.name} - ${result.type}`;
                     text.href = `/profile/${result.id}`;
