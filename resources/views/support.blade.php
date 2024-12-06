@@ -12,7 +12,7 @@
 
 
 </head>
-<body>
+<body class="bg-gray-100 dark:bg-gray-900">
 <main class="main-content">
 <section class="common">
             <h1>COMMON Q&A's </h1>
