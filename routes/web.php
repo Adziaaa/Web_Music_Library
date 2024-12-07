@@ -10,6 +10,7 @@ use App\Http\Controllers\PopularSong_Controller;
 use App\Http\Controllers\PopularArtistController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SearchController;
+//use ProtoneMedia\LaravelXssProtection\Middleware\XssCleanInput;
 
 Route::get('/', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
