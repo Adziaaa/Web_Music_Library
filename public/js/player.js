@@ -202,4 +202,3 @@ function formatTime(seconds) {
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
 }
 
-//make sure your browser has permission to clipboard
