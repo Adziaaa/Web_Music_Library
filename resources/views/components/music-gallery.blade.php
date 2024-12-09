@@ -27,37 +27,6 @@
     </div>
 @endforeach
 
-<div class="bottom">
-    <div class="bottom-section">
-        <h4>Company</h4>
-        <ul>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="{{ route('websiteRegulations') }}">View Website Regulations</a>
-            </li>
-        </ul>
-    </div>
-    <div class="bottom-section">
-        <h4><a href="{{ route('contact.form') }}">Help</a></h4>
-        <ul>
-            <li><a href="#">Q&A</a></li>
-        </ul>
-    </div>
-    <div class="bottom-section">
-        <h4>Contact us</h4>
-        <ul>
-            <li>Alsion 2, 6400 Sønderborg</li>
-            <li>Telephone: 6550 1160</li>
-        </ul>
-    </div>
-</div>
-
-<div class="end">
-    <footer>
-        <marquee>
-            <p>©2024 Made by Group 7 | All Rights Reserved</p>
-        </marquee>
-    </footer>
-</div>
+<x-footer />
 
 <script src="{{ asset('js/musicGallery.js') }}"></script>

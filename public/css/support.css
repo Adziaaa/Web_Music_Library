@@ -34,46 +34,37 @@
     cursor: pointer;
 }
 
-.dropdown-menu {
+.dropdown-content {
     display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background-color: rgb(20, 20, 20);
-    color: #f1f1f1dc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 150px;
-    z-index: 1;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.dropdown-menu a {
-    display: block;
     padding: 10px;
-    color: #e9e8e8e8;
-    text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-    background-color: #363434;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    border-radius: 5px;
 }
 
 .main-content {
-    background: linear-gradient(to bottom, #00203f, #000);
-    min-height: 100vh;
+    /* background: linear-gradient(to bottom, #00203f, #000);                                                   */
+    /* min-height: 100vh; */
     /* Ensures it covers full viewport height */
     padding: 20px;
 }
 
 .common {
-    width: 100%;
+    align-items: center;
+    max-width: 30%;
+    /* background-color:#5d0404; */
     position: relative;
-    padding-left: 33%;
-    padding-right: 25%;
+    /* padding-left: 33%;
+    padding-right: 25%; */
     padding-top: 10px;
     padding-bottom: 10px;
     margin: auto;
+}
+
+#common-title{
+    text-align: center;
+    padding-bottom: 3%;
 }
 
 .common h1 {
@@ -99,6 +90,7 @@
     width: 67%;
     font-size: 18px;
     text-align: left;
+    margin: auto;
 }
 
 .hover-list li {
@@ -109,6 +101,19 @@
     cursor: pointer;
     z-index: 1;
     border-radius: 5px;
+}
+
+.hover-list > #login, .hover-list > #rating {
+    position: relative;
+    padding: 10px 20px;
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+    z-index: 1;
+    /* border-radius: 5px; */
+    background-color: unset; 
+    transition-delay: 1s;
+    border-color: unset;
 }
 
 .hover-list a {
@@ -125,7 +130,7 @@
     text-decoration: underline;
 }
 
-.hover-list li::after {
+.hover-list .question::after {
     content: '';
     position: absolute;
     right: 10px;
@@ -141,6 +146,12 @@
     border-left-color: #01274e;
 }
 
+
+#title{
+    text-align: center;
+    padding-left:0px;
+}
+
 .contact-section {
     max-width: 475px;
     margin: auto;
@@ -150,6 +161,7 @@
     border-radius: 8px;
     margin-top: 0.5%;
     margin-bottom: 3%;
+
 }
 
 .form-group {
@@ -190,59 +202,4 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #5d0404;
     transition: border-left-color 0.2s ease;
-}
-
-.success-message {
-    color: green;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.bottom {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: black;
-    color: white;
-    padding: 20px;
-
-}
-
-.bottom-section {
-    flex: 1;
-    margin: 0 20px;
-}
-
-.bottom-section h4 {
-    margin-bottom: 10px;
-}
-
-.bottom-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.bottom-section ul li {
-    margin-bottom: 10px;
-}
-
-.bottom-section ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.bottom-section ul li a:hover {
-    text-decoration: underline;
-}
-
-.end {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    padding: 10px 0;
-}
-
-footer marquee {
-    width: 100%;
 }
