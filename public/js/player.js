@@ -1,4 +1,3 @@
-//connecting with my home.html file to be able to access chosen elements
 const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('playBtn');
 const prevBtn = document.getElementById('prevBtn');
@@ -23,7 +22,6 @@ const duration = document.getElementById('duration');
 
 const songs = ['Please', '7_rings', 'All_I_want', 'Jupiter_and_Mars', 'Alive', 'Always_Waiting', 'Erase', 'Dame_Mas', 'Good_Morning', 'Goodbar_Good_Night', 'I_Got_a_Boy', 'Love_of_My_Life', 'Mr_Rock', 'Reason_to_Stay', 'Stranger_Things', 'Use', 'Fire_fighter'];
 let songIndex = 0;
-// Variable to store the current Howl instance
 let currentSound;
 // here fetch data to be able to display
 fetch('/ada_we/json/songs.json')
@@ -62,7 +60,6 @@ function loadSong(song) {
     });
 
 }
-// clean
 
 
 
@@ -72,12 +69,12 @@ function playSong() {
     const isPlaying = musicContainer.classList.contains('play');
 
     if (isPlaying) {
-        currentSound.pause(); // Pause the song if it's currently playing
+        currentSound.pause(); // Pause current sing
         musicContainer.classList.remove('play');
         playBtn.querySelector('i.fas').classList.add('fa-play');
         playBtn.querySelector('i.fas').classList.remove('fa-pause');
     } else {
-        currentSound.play(); // Play the song if it's not playing
+        currentSound.play();
         musicContainer.classList.add('play');
         playBtn.querySelector('i.fas').classList.remove('fa-play');
         playBtn.querySelector('i.fas').classList.add('fa-pause');
@@ -115,29 +112,25 @@ function nextSong() {
 
 
 
-///////// clear till here
 
 
 
 
-// Update the progress bar
-// Update the progress bar
+// Update the progress bar fo r soong
 function updateProgress() {
     if (currentSound && currentSound.playing()) {
-        const totalDuration = currentSound.duration() || 0; // Ensure we have a valid duration
+        const totalDuration = currentSound.duration() || 0;
         const currentPlayTime = currentSound.seek() || 0;
         const remainingTime = totalDuration - currentPlayTime;
 
         const progressPercent = (currentPlayTime / totalDuration) * 100;
         progress.style.width = `${progressPercent}%`;
 
-        // Update time elements in the UI
         currentTime.innerText = formatTime(currentPlayTime);
         duration.innerText = formatTime(totalDuration);
         timeLeft.innerText = `-${formatTime(remainingTime)}`;
     }
 
-    // Continue updating
     requestAnimationFrame(updateProgress);
 }
 
@@ -151,26 +144,23 @@ function setProgress(e) {
     currentSound.seek((clickX / width) * duration);
 }
 
-// Set progress based on click position
+//updating my profress bar 
 function updateProgressBar() {
     if (currentSound) {
         const progress = document.querySelector('.progress');
         const duration = currentSound.duration();
-        const currentTime = currentSound.currentTime(); // Assuming you have a method to get current time
-        const width = (currentTime / duration) * 100; // Calculate percentage
-        progress.style.width = width + '%'; // Update the width
+        const currentTime = currentSound.currentTime();
+        const width = (currentTime / duration) * 100;
+        progress.style.width = width + '%';
     }
 }
 
-// Call this function periodically, e.g., using setInterval
-setInterval(updateProgressBar, 1000); // Update every second
-
-
-//clear cod down here
+setInterval(updateProgressBar, 1000);
 
 
 
-// Event listeners
+
+
 playBtn.addEventListener('click', () => {
     const isPlaying = musicContainer.classList.contains('play');
 
@@ -195,7 +185,7 @@ progressContainer.addEventListener('click', setProgress);
 loadSong(songs[songIndex]);
 
 
-
+//shuffle
 function randomsong() {
     const randomIndex = Math.floor(Math.random() * songs.length);
     songIndex = randomIndex;
@@ -213,27 +203,3 @@ function formatTime(seconds) {
 }
 
 //make sure your browser has permission to clipboard
-function copy() {
-    const currentSong = songs[songIndex]; // Get the current song
-    title.innerText = currentSong;
-    artistElement.innerText = `Artist: ${songData[currentSong].artist}`;
-    descriptionElement.innerText = `Description: ${songData[currentSong].description}`;
-    yearElement.innerText = `Year: ${songData[currentSong].year}`;
-    genreElement.innerText = `Genre: ${songData[currentSong].genre}`;
-
-    const textToCopy = `
-    Title: ${currentSong}
-    Artist: ${songData[currentSong].artist}
-    Description: ${songData[currentSong].description}
-    Year: ${songData[currentSong].year}
-    Genre: ${songData[currentSong].genre}
-  `;
-
-    navigator.clipboard.writeText(textToCopy.trim())
-        .then(() => {
-            console.log('Text copied to clipboard');
-        })
-        .catch(err => {
-            console.error('Failed to copy text: ', err);
-        });
-}

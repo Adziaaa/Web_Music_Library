@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style1.css">
     <!-- Bootstrap Icons CDN Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -35,9 +36,8 @@
             </div>
         </div>
         <div class="navigation">
-            <button onclick="copy()" id="muteBtn" class="action-btn">
-                <i class="bi bi-c-circle-fill"></i>
-            </button>
+            <button id="muteBtn" class="action-btn">
+                <i class="fa-duotone fa-light fa-music-note"></i> </button>
             <button id="prevBtn" class="action-btn">
                 <i class="fas fa-backward"></i>
             </button>
