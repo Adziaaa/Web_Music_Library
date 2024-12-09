@@ -1,33 +1,36 @@
 <x-app-layout>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/support.css') }}">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ asset('css/support.css') }}">
+        <title>SUPPORT</title>
+    </head>
+    <body class="bg-gray-100 dark:bg-gray-900">
+    <main class="main-content">
+    <section class="common">
+        <h1 ID="common-title">COMMONLY ASKED QUESTIONS</h1>
+        <ul class="hover-list">
+            <li class="question">
+                <a href="#" onclick="toggleDropdown('login')">Can't log in</a>
+            </li>
+            <li  id="login" class="dropdown-content">
+                <p>If you are logged in as a Guest(you can see that in the right side of the menu on to of the website), click "Log In" button next to it. Then either log in with existing account or create a new one by clicking "Sign up"</p>
+            </li>
+            <li class="question">
+                <a href="#" onclick="toggleDropdown('rating')">Update payment details</a>
+            </li>
+            <li id="rating" class="dropdown-content">
+                <p>We're glad that you like our website. To tell us how much you love it use contact form bellow!</p>
+            </li>
+        </ul>
+        <div >
+        <h2 id="title"><br>NOT WHAT YOU'RE LOOKING FOR?</h2>
+        <h2 id="title"  > CONTACT US! </h2>
+        </div>
+    </section>        
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>SUPPORT</title>
-
-
-</head>
-<body class="bg-gray-100 dark:bg-gray-900">
-<main class="main-content">
-<section class="common">
-            <h1>COMMON Q&A's </h1>
-            <ul class="hover-list">
-                <li><a href="#">Can't log in</a></li>
-                <li><a href="#">Update payment details</a></li>
-            </ul>
-            <h2><br>NOT WHAT YOU'RE LOOKING FOR? <br>CONTACT US</h2>
-</section>        
-
-
-    
-<section class="contact-section">
-        
-        
+    <section class="contact-section">
         @if(session('success'))
             <p class="success-message">{{ session('success') }}</p>
         @endif
@@ -48,44 +51,12 @@
             </div>
             <button type="submit">Send Email</button>
         </form>
-</section>
-</main>
-
-<div class="bottom">
-    <div class="bottom-section">
-        <h4>Company</h4>
-        <ul>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">Affiliate program</a></li>
-        </ul>
-    </div>
-    <div class="bottom-section">
-        <h4>Help</h4>
-        <ul>
-            <li><a href="#">Q&A</a></li>
-            <li><a href="#">Sign up</a></li>
-        </ul>
-    </div>
-    <div class="bottom-section">
-        <h4>Contact us</h4>
-        <ul>
-            <li>Alsion 2, 6400 Sønderborg</li>
-            <li>Telephone: 6550 1160</li>
-        </ul>
-    </div>
-</div>
-
-<div class="end">
-    <footer>
-        <marquee>
-            <p>©2024 Made by Group 7 | All Rights Reserved</p>
-        </marquee>
-    </footer>
-</div>
-
-
+    </section>
+    </main>
+    
+    <x-footer />
+    
     <script src="{{ asset('js/support.js') }}"></script>
-</body>
-</html>
-</x-app-layout>
+    </body>
+    </html>
+    </x-app-layout>
