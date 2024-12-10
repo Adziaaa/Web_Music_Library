@@ -32,11 +32,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/album/{id}', [AlbumController::class, 'find'])->name('album');
 
     Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile');
-
-    Route::get('/playlist/{id}', [PlaylistController::class, 'show'])->name('playlist');
 });
 
-require __DIR__.'/auth.php';
+Route::middleware(['auth'])->group(function () {
+    Route::get('/playlists', [PlaylistController::class, 'index'])->name('playlists.index'); 
+    Route::get('/playlists/create', [PlaylistController::class, 'create'])->name('playlists.create');
+    Route::get('/playlists/{playlist}', [PlaylistController::class, 'show'])->name('playlists.show'); 
+    Route::post('/playlists', [PlaylistController::class, 'store'])->name('playlists.store');
+    Route::post('/playlists/{playlist}/add-song', [PlaylistController::class, 'addSong'])->name('playlists.addSong');    
+    Route::delete('/playlists/{playlist}/remove-song/{song}', [PlaylistController::class, 'removeSong'])->name('playlists.removeSong');
+});
+
+
+
+require __DIR__ . '/auth.php';
 
 // Route::get('/home', [HomeCOntroller::class, 'show']);
 
@@ -61,6 +70,4 @@ Route::middleware(['auth', 'check.guest'])->group(function () {
     Route::get('/album/{id}', [AlbumController::class, 'find'])->name('album');
 
     Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile');
-
-    Route::get('/playlist/{id}', [PlaylistController::class, 'show'])->name('playlist');
 });
