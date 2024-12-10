@@ -35,6 +35,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     // Protected Playlist API routes
     Route::get('/playlists', [PlaylistController::class, 'index']);
     Route::get('/playlists/{id}', [PlaylistController::class, 'show']);
+    Route::post('/playlists', [PlaylistController::class, 'store']);
+    Route::put('/playlists/{id}', [PlaylistController::class, 'update']);
+    Route::delete('/playlists/{id}', [PlaylistController::class, 'destroy']);
 
     // Logout route
     Route::post('/auth/logout', [AuthController::class, 'logout']);
