@@ -14,4 +14,36 @@ window.onclick = function(event) {
         }
     }
 };
+document.getElementById('dream-team-title').addEventListener('click', function () {
+    const duration = 3 * 1000;
+    const end = Date.now() + duration;
 
+    (function frame() {
+        confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+        });
+        confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    })();
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const loader = document.getElementById("loader");
+
+    form.addEventListener("submit", function () {
+        loader.style.display = "flex"; // Show the loader
+    });
+});

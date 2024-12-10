@@ -1,18 +1,21 @@
 <?php
 
 use App\Models\PopularSong;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\PopularSong_Controller;
 use App\Http\Controllers\PopularArtistController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\SearchController;
 
 Route::get('/', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+Route::get('/about', function() { return view ('about');});
 
 
 // Route::get('/', function () {

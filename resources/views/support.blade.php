@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/support.css') }}">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -15,12 +14,7 @@
 <body>
 <main class="main-content">
 <section class="common">
-            <h1>COMMON Q&A's </h1>
-            <ul class="hover-list">
-                <li><a href="#">Can't log in</a></li>
-                <li><a href="#">Update payment details</a></li>
-            </ul>
-            <h2><br>NOT WHAT YOU'RE LOOKING FOR? <br>CONTACT US</h2>
+            <h2><br>NEED SOME HELP? CONTACT US<br></h2>
 </section>        
 
 
@@ -55,7 +49,7 @@
     <div class="bottom-section">
         <h4>Company</h4>
         <ul>
-            <li><a href="#">About us</a></li>
+            <li><a href="/about">About us</a></li>
             <li><a href="#">Privacy policy</a></li>
             <li><a href="#">Affiliate program</a></li>
         </ul>
@@ -82,6 +76,10 @@
             <p>©2024 Made by Group 7 | All Rights Reserved</p>
         </marquee>
     </footer>
+</div>
+    <!--hehefun for reloading--->
+<div id="loader" class="loader" style="display: none;">
+    <div class="spinner"></div>
 </div>
 
 
