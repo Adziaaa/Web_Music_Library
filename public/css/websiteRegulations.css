@@ -1,4 +1,4 @@
-body {
+html, body {
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
@@ -6,26 +6,31 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.rules {
+    padding: 60px;
+}
+
 .regulations {
     text-align: center;
     margin-bottom: 30px;
 }
 
-h3 {
+h2 {
     color: #2965cc;
     /* Highlighted headings */
-    border-bottom: 2px solid #2965cc;
+    border-bottom: 1px solid #2965cc;
     /* Underline for headings */
     padding-bottom: 5px;
 }
 
-p {
-    font-size: 17px;
+#content > p {
+    /* font-size: 17px; */
     text-align: left;
-    margin: 10px 0;
+    margin-bottom: 20px;
+    /* margin: 10px 0; */
 }
 
-ul {
+.RegulationPoint {
     margin: 10px 0 20px 20px;
 }
 
@@ -34,65 +39,15 @@ li {
 }
 
 .contact-info {
-    margin-top: 20px;
     font-weight: bold;
+    margin-top: 10px;
 }
 
-.bottom {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: black;
-    color: white;
-    padding: 20px;
-
+.RegulationPoint > li{
+    margin-bottom: 5px;
 }
 
-.bottom-section {
-    flex: 1;
-    margin: 0 20px;
-}
-
-.bottom-section h4 {
-    margin-bottom: 10px;
-}
-
-.bottom-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.bottom-section ul li {
-    margin-bottom: 10px;
-}
-
-.bottom-section ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.bottom-section ul li a:hover {
-    text-decoration: underline;
-}
-
-.end {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    padding: 0;
-    margin: 0px;
-}
-
-footer marquee {
-    width: 100%;
-}
-
-.rules {
-    padding: 60px;
-}
-
-#rules {
+#rules-title {
     text-align: left;
     font-size: 21px;
     margin: 0px;
