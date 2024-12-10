@@ -12,4 +12,8 @@ class PopularSong extends Model
     protected $primary = 'id';
     protected $fillable = ['name','title','photo'];
 
+    public function playlists()
+    {
+        return $this->belongsToMany(Playlist::class, 'playlist_song', 'song_id', 'playlist_id');
+    }
 }
