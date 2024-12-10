@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\SongController;
+use App\Http\Controllers\Api\PlaylistController;
+use App\Http\Controllers\Api\AlbumController;
+use App\Http\Controllers\Api\ArtistController;
 use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -20,6 +23,18 @@ Route::middleware(['auth:sanctum'])->group(function () {
     // Protected Song API routes
     Route::get('/songs', [SongController::class, 'index']);
     Route::get('/songs/{id}', [SongController::class, 'show']);
+
+    // Protected Artist API routes
+    Route::get('/artists', [ArtistController::class, 'index']);
+    Route::get('/artists/{id}', [ArtistController::class, 'show']);
+
+    // Protected Album API routes
+    Route::get('/albums', [AlbumController::class, 'index']);
+    Route::get('/albums/{id}', [AlbumController::class, 'show']);
+
+    // Protected Playlist API routes
+    Route::get('/playlists', [PlaylistController::class, 'index']);
+    Route::get('/playlists/{id}', [PlaylistController::class, 'show']);
 
     // Logout route
     Route::post('/auth/logout', [AuthController::class, 'logout']);
