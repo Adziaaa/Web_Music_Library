@@ -10,5 +10,5 @@ class PopularArtist extends Model
     use HasFactory;
     protected $table = 'artists';
     protected $primary = 'id';
-    protected $fillable = ['name','photo'];
+    protected $fillable = ['name', 'bio', 'image'];
 }

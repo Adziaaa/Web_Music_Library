@@ -15,12 +15,12 @@ class Album extends Model
 
     protected $primary = 'id';
 
-    // Define which attributes are mass assignable
     protected $fillable = [
         'title',
-        'artist',
-        'albumTime',
-        'nrSongs',
-        'image'
+        'song_count',
+        'artist_id',
+        'image',
+        'duration',
+        'release_date'
     ];
 }

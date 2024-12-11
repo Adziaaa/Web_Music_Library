@@ -10,6 +10,5 @@ class PopularSong extends Model
     use HasFactory;
     protected $table = 'songs';
     protected $primary = 'id';
-    protected $fillable = ['name','title','photo'];
-
+    protected $fillable = ['title','duration','artist_id','album_id'];
 }

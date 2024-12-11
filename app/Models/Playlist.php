@@ -21,4 +21,3 @@ class Playlist extends Model
         return $this->belongsToMany(PopularSong::class);
     }
 }
-
