@@ -17,28 +17,9 @@ Route::post('/auth/token', [AuthController::class, 'generateToken']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     // // Protected User API routes
-    // Route::get('/users', [UserController::class, 'index']);
-    // Route::get('/users/{id}', [UserController::class, 'show']);
-
-    // // Protected Song API routes
-    // Route::get('/songs', [SongController::class, 'index']);
-    // Route::get('/songs/{id}', [SongController::class, 'show']);
-
-    // // Protected Artist API routes
-    // Route::get('/artists', [ArtistController::class, 'index']);
-    // Route::get('/artists/{id}', [ArtistController::class, 'show']);
-
-    // // Protected Album API routes
-    // Route::get('/albums', [AlbumController::class, 'index']);
-    // Route::get('/albums/{id}', [AlbumController::class, 'show']);
-
-    // // Protected Playlist API routes
-    // Route::get('/playlists', [PlaylistController::class, 'index']);
-    // Route::get('/playlists/{id}', [PlaylistController::class, 'show']);
-    // Route::post('/playlists', [PlaylistController::class, 'store']);
-    // Route::put('/playlists/{id}', [PlaylistController::class, 'update']);
-    // Route::delete('/playlists/{id}', [PlaylistController::class, 'destroy']);
-
+    Route::get('/users', [UserController::class, 'index']);
+    Route::get('/users/{id}', [UserController::class, 'show']);
+    
     // Artists
     Route::apiResource('artists', ArtistController::class);
 
