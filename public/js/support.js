@@ -15,7 +15,7 @@ window.onclick = function(event) {
     }
 };
 document.getElementById('dream-team-title').addEventListener('click', function () {
-    const duration = 3 * 1000;
+    const duration = 2 * 1000;
     const end = Date.now() + duration;
 
     (function frame() {
