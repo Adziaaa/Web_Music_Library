@@ -24,7 +24,7 @@ class PlaylistCRUD extends Controller
 
         PlaylistCrudmodel::create($validated);
 
-        return redirect('/index');
+        return redirect('/index1');
     }
 
     public function edit($id)
