@@ -1,7 +1,7 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #00203f;
     padding: 20px;
+    color: #fff;
 }
 
 h1 {
@@ -28,15 +28,15 @@ h1 {
 }
 
 .song-item {
-    width: 250px; 
+    width: 250px;
     flex-shrink: 0;
     text-align: center;
     background-color: #fff;
-    border-radius: 10px; 
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
     transition: transform 0.3s ease;
-    border: 1px solid #ddd; 
+    border: 1px solid #ddd;
 }
 
 .song-item:hover {
@@ -57,16 +57,16 @@ h1 {
 .song-title {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #333; 
+    color: #333;
 }
 
 .song-artist {
     font-size: 0.9rem;
-    color: #777; 
+    color: #777;
 }
 
 .remove-btn {
-    background-color: #f44336; 
+    background-color: #f44336;
     color: white;
     border: none;
     padding: 8px 15px;
@@ -108,7 +108,7 @@ h1 {
 
 .add-song-btn {
     padding: 12px 25px;
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
@@ -118,7 +118,7 @@ h1 {
 }
 
 .add-song-btn:hover {
-    background-color: #45a049; 
+    background-color: #45a049;
 }
 
 .exit-form {
@@ -128,7 +128,7 @@ h1 {
 
 .exit-form button {
     padding: 12px 25px;
-    background-color: #2196F3; 
+    background-color: #2196F3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -138,7 +138,7 @@ h1 {
 }
 
 .exit-form button:hover {
-    background-color: #0b7dda; 
+    background-color: #0b7dda;
 }
 
 p {
@@ -146,4 +146,3 @@ p {
     font-size: 1.2rem;
     margin-top: 20px;
 }
-
