@@ -1,15 +1,18 @@
 <?php
-
 use App\Models\PopularSong;
+use App\Models\PlaylistCrudmodel;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\PopularSong_Controller;
 use App\Http\Controllers\PopularArtistController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\SearchController;
+use App\Http\Controllers\PlaylistCRUD;
+
 
 Route::get('/', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
@@ -74,3 +77,12 @@ Route::middleware(['auth', 'check.guest'])->group(function () {
 
     Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile');
 });
+
+
+
+Route::get('/index1', [PlaylistCRUD::class, 'index'])->name('index');
+Route::get('/create1',[PlaylistCRUD::class,'create']);
+Route::post('/store', [PlaylistCRUD::class, 'store'])->name('store');
+Route::delete('/delete/{id}', [PlaylistCRUD::class, 'destroy'])->name('delete');
+Route::get('/edit/{id}', [PlaylistCRUD::class, 'edit'])->name('edit');
+Route::put('/update/{id}', [PlaylistCRUD::class, 'update'])->name('update');
