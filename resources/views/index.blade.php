@@ -1,5 +1,5 @@
 <x-app-layout>
-    <link rel="stylesheet" href="{{ asset('css/index1.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 
     <body>
         {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
