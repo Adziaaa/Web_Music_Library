@@ -10,6 +10,7 @@ use App\Http\Controllers\PopularSong_Controller;
 use App\Http\Controllers\PopularArtistController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SearchController;
+use App\Http\Middleware\CheckGuest;
 
 Route::get('/', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
@@ -65,7 +66,7 @@ Route::get('/guest-login', function () {
     return redirect('/dashboard'); // Redirect to the desired page after login
 })->name('guest.login');
 
-Route::middleware(['auth', 'check.guest'])->group(function () {
+Route::middleware(['auth', CheckGuest::class])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
