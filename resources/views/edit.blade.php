@@ -31,13 +31,12 @@
     <div class="scheduler">
         <h3 class="title_alarm">Update Alarm</h3>
         <div class="form_alarm">
-            <form action="{{ route('update', ['id' => $crud->id]) }}" method="POST">
+            <form action="{{ route('update', ['id' => $playlist->id]) }}" method="POST">
                 @csrf
                 @method('PUT')
-                <input type="text" name="name" value="{{ old('name', $crud->name) }}" required>
-                <input type="text" name="title" value="{{ old('title', $crud->title) }}" required>
-                <input type="text" name="duration" value="{{ old('duration', $crud->duration) }}" required>
-                <input type="text" name="genre" value="{{ old('genre', $crud->genre) }}" required>
+                <input type="text" name="name" value="{{ old('name', $playlist->name) }}" required>
+                <input type="text" name="duration" value="{{ old('duration', $playlist->duration) }}" required>
+                <input type="text" name="genre" value="{{ old('genre', $playlist->genre) }}" required>
                 <button type="submit">Update</button>
             </form>
 

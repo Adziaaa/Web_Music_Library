@@ -7,15 +7,10 @@
             <form action="{{ route('store') }}" method="POST">
                 @csrf
                 <input type="text" name="name" placeholder="Name" required>
-                <input type="text" name="title" placeholder="Title" required>
                 <input type="number" name="duration" placeholder="Duration" required>
                 <input type="text" name="genre" placeholder="Genre" required>
                 <button type="submit">Submit</button>
             </form>
-
-
-
-
         </div>
     </div>
 

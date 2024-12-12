@@ -23,24 +23,22 @@
         <div class="scheduler text-white">
             <div class="al">
                 <h3 class="title_alarm">PlaylistsWorld - place where you can add your favourite playlists</h3>
-                <a href="/create1"><button id="addalarmbtn" class="alarm_button">Add New Playlist</button></a>
+                <a href="/create"><button id="addalarmbtn" class="alarm_button">Add New Playlist</button></a>
             </div>
             <table class="table_alarm">
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Name </th>
-                        <th>Title</th>
+                        <th>Name</th>
                         <th>Duration</th>
                         <th>Genre</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($crud as $item)
+                    @foreach ($playlist as $item)
                         <tr>
                             <th scope="row">{{ $item->id }}</th>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->title }}</td>
                             <td>{{ $item->duration }}</td>
                             <td>{{ $item->genre }}</td>
 

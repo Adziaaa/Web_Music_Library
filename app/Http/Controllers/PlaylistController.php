@@ -2,102 +2,75 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Playlist;
-use App\Models\PopularSong;
 
-
-class PlaylistController
+class PlaylistController extends Controller
 {
     public function index()
     {
-        $playlists = Playlist::where('user_id', auth()->id())->get();
-    
-        return view('profile.playlist.index', ['playlists' => $playlists]);
-    }
-    
-    
-
-
-    public function create()
-    {
-        return view('profile.playlist.create');
+        $playlist = Playlist::all(); // Fetch data
+        return view('index', compact('playlist'));
     }
 
-    public function show($id)
-    {
-        $playlist = Playlist::with('songs')->find($id);
-        $songs = PopularSong::all(); 
-
-        return view('profile.playlist.show', compact('playlist', 'songs'));
-    }
-
-
+    // Create a new playlist
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',    
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'duration' => 'required|integer',
+            'genre' => 'required|string|max:255',
         ]);
-    
+
+        //$playlist = Playlist::create($validated);
+
         $playlist = new Playlist();
         $playlist->name = $request->input('name');
+        $playlist->duration = $request->input('duration');
+        $playlist->genre = $request->input('genre');
         $playlist->user_id = auth()->id(); 
         $playlist->save();
-    
-        return redirect()->route('playlists.show', ['id' => $playlist->id])
-                         ->with('success', 'Playlist created successfully!');
-    }
-    
 
-
-
-    public function edit(Playlist $playlist)
-    {
-        // Show form to edit a playlist
-        return view('profile.playlist.edit', compact('playlist'));
+        return redirect('/index');
     }
 
-    public function update(Request $request, Playlist $playlist)
+    public function edit($id)
     {
-        // Update playlist details
-        $validatedData = $request->validate([
+        $playlist = Playlist::findOrFail($id); 
+        return view('edit', compact('playlist'));
+    }
+    
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
             'name' => 'required|string|max:255',
+            'duration' => 'required|integer',
+            'genre' => 'required|string|max:255',
         ]);
-
-        $playlist->update($validatedData);
-
-        return redirect()->route('profile.playlist.index')->with('success', 'Playlist updated successfully.');
+    
+        $playlist = Playlist::findOrFail($id);
+    
+        $playlist->update([
+            'name' => $request->name,
+            'duration' => $request->duration,
+            'genre' => $request->genre,
+        ]);
+    
+        return redirect('/index');
     }
+    
 
-    public function destroy(Playlist $playlist)
+    
+
+    public function destroy($id)
     {
-        // Delete a playlist
+        $playlist = Playlist::findOrFail($id);
         $playlist->delete();
-
-        return redirect()->route('profile.playlist.index')->with('success', 'Playlist deleted successfully.');
+        return back();
     }
-    public function addSong(Request $request, $playlistId)
-    {
-        $playlist = Playlist::findOrFail($playlistId);  
-        $popularSong = PopularSong::findOrFail($request->song_id);  
-
-        $playlist->songs()->attach($popularSong->id);
-
-        return redirect()->route('playlists.show', $playlistId)
-                        ->with('success', 'Song added to playlist!');
-    }
-
-    public function removeSong(Request $request, Playlist $playlist, PopularSong $song)
-    {
-        if ($playlist->user_id !== auth()->id()) {
-            return redirect()->route('playlists.index')->with('error', 'Unauthorized action.');
-        }
-
-        $playlist->songs()->detach($song->id);
-
-        return redirect()->route('playlists.show', ['playlist' => $playlist->id])
-                        ->with('success', 'Song removed successfully!');
-    }
-
 }
