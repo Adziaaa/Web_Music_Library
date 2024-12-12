@@ -13,9 +13,10 @@ class Album extends Model
     // Specify the table name if it doesn't follow the convention (optional)
     protected $table = 'albums';
 
+    protected $primary = 'id';
+
     // Define which attributes are mass assignable
     protected $fillable = [
-        'id',
         'title',
         'artist',
         'albumTime',
