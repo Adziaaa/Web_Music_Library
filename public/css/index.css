@@ -1,0 +1,83 @@
+
+.scheduler {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #222936;/* Dark card-like background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.332);
+    border: 1px solid #333; 
+}
+
+.title_alarm {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff; 
+}
+
+/* Buttons */
+.alarm_button {
+    background-color: #4c84d8;  
+    color: #ffffff; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.alarm_button:hover {
+    background-color: #3d6cb3;  
+    color: #000000; 
+}
+
+/* Table Styling */
+.table_alarm {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+    background-color: #131826; 
+    color: #ffffff;
+    border: 1px solid #444; 
+}
+
+.table_alarm th,
+.table_alarm td {
+    padding: 10px;
+    border-bottom: 0.5px solid #333; /* Row separation */
+}
+
+.table_alarm th {
+    background-color: #131826; 
+    color: #4c84d8; 
+    font-weight: bold;
+    text-align: left;
+}
+
+.table_alarm tr:hover {
+    background-color: #1f2840;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+form button {
+    margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+    .scheduler {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .alarm_button {
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+}
