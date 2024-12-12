@@ -10,7 +10,7 @@ class PlaylistCRUD extends Controller
     public function index()
     {
         $crud = PlaylistCrudmodel::all(); // Fetch data
-        return view('index1', compact('crud'));
+        return view('index', compact('crud'));
     }
 
     public function store(Request $request)
@@ -24,7 +24,7 @@ class PlaylistCRUD extends Controller
 
         PlaylistCrudmodel::create($validated);
 
-        return redirect('/index1');
+        return redirect('/index');
     }
 
     public function edit($id)
@@ -51,8 +51,8 @@ class PlaylistCRUD extends Controller
         $crud = PlaylistCrudmodel::findOrFail($id);
     
         $crud->update($validated);
-    
-        return redirect('/');
+
+        return redirect('/index1');
     }
     
 

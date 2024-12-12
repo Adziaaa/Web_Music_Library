@@ -21,6 +21,12 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
+                        {{ __('Playlists') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('contact.form')" :active="request()->routeIs('contact.form')">
                         {{ __('Support') }}
                     </x-nav-link>

@@ -80,8 +80,8 @@ Route::middleware(['auth', 'check.guest'])->group(function () {
 
 
 
-Route::get('/index1', [PlaylistCRUD::class, 'index'])->name('index');
-Route::get('/create1',[PlaylistCRUD::class,'create']);
+Route::get('/index', [PlaylistCRUD::class, 'index'])->name('index');
+Route::get('/create',[PlaylistCRUD::class,'create']);
 Route::post('/store', [PlaylistCRUD::class, 'store'])->name('store');
 
 Route::get('/edit/{id}', [PlaylistCRUD::class, 'edit'])->name('edit');
