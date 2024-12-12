@@ -83,6 +83,7 @@ Route::middleware(['auth', 'check.guest'])->group(function () {
 Route::get('/index1', [PlaylistCRUD::class, 'index'])->name('index');
 Route::get('/create1',[PlaylistCRUD::class,'create']);
 Route::post('/store', [PlaylistCRUD::class, 'store'])->name('store');
-Route::delete('/delete/{id}', [PlaylistCRUD::class, 'destroy'])->name('delete');
+
 Route::get('/edit/{id}', [PlaylistCRUD::class, 'edit'])->name('edit');
 Route::put('/update/{id}', [PlaylistCRUD::class, 'update'])->name('update');
+Route::delete('/delete/{id}', [PlaylistCRUD::class, 'destroy']);

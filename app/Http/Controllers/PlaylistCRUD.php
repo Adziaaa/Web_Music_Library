@@ -29,9 +29,10 @@ class PlaylistCRUD extends Controller
 
     public function edit($id)
     {
-        $post = PlaylistCrudmodel::findOrFail($id); // Use singular 'post'
-        return view('edit1');
+        $crud = PlaylistCrudmodel::findOrFail($id); 
+        return view('edit1', compact('crud'));
     }
+    
     public function create()
     {
 
@@ -46,12 +47,14 @@ class PlaylistCRUD extends Controller
             'duration' => 'required|integer',
             'genre' => 'required|string|max:255',
         ]);
-
+    
         $crud = PlaylistCrudmodel::findOrFail($id);
+    
         $crud->update($validated);
-
-        return redirect('/index1');
+    
+        return redirect('/');
     }
+    
 
     public function destroy($id)
     {

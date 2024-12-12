@@ -1,4 +1,5 @@
 <x-app-layout>
+    <link rel="stylesheet" href="{{ asset('css/index1.css') }}">
 
     <body>
         {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
@@ -21,7 +22,7 @@
 
         <div class="scheduler">
             <div class="al">
-                <h3 class="title_alarm">Scheduler - place where you can schedule height of your tables.</h3>
+                <h3 class="title_alarm">PlaylistsWorld - place where you can add your favourite playlists</h3>
                 <a href="/create1"><button id="addalarmbtn" class="alarm_button">Add New Alarm</button></a>
             </div>
             <table class="table_alarm">

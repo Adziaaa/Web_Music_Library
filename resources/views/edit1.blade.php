@@ -31,9 +31,10 @@
     <div class="scheduler">
         <h3 class="title_alarm">Update Alarm</h3>
         <div class="form_alarm">
-            <form action="/update/{{ $crud->name }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('update', ['id' => $crud->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
+
                 <input value="{{ $crud->name }}" type="text" name="name" class="form-control" placeholder="Name"
                     required>
                 <input value="{{ $crud->title }}" type="text" name="title" class="form-control"
@@ -42,14 +43,9 @@
                     placeholder="Duration" required>
                 <input value="{{ $crud->genre }}" type="text" name="genre" class="form-control"
                     placeholder="Genre" required>
-
-
-
-
-
-
                 <button type="submit" class="alarm_button">Submit</button>
             </form>
+
         </div>
     </div>
 
