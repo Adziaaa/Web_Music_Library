@@ -19,7 +19,7 @@
         </script>
 
 
-        <div class="scheduler">
+        <div class="scheduler text-white">
             <div class="al">
                 <h3 class="title_alarm">Scheduler - place where you can schedule height of your tables.</h3>
                 <a href="/create1"><button id="addalarmbtn" class="alarm_button">Add New Alarm</button></a>
@@ -66,6 +66,7 @@
 
 
         </div>
+        <x-footer />
 
         <script src="{{ asset('js/support.js') }}"></script>
 
