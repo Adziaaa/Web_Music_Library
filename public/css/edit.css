@@ -1,0 +1,107 @@
+.scheduler {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #222936;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.332);
+    border: 1px solid #333;
+}
+
+.title-alarm {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.form_alarm {
+    margin-top: 20px;
+}
+
+.form_alarm input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    background-color: #131826;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.form_alarm input::placeholder {
+    color: #aaa;
+}
+
+.form_alarm button {
+    background-color: #4c84d8;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form_alarm button:hover {
+    background-color: #3d6cb3;
+    color: #000000;
+}
+
+x-footer {
+    margin-top: 40px;
+}
+
+.table_alarm {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+    background-color: #131826;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+.table_alarm th,
+.table_alarm td {
+    padding: 10px;
+    border-bottom: 0.5px solid #333;
+}
+
+.table_alarm th {
+    background-color: #131826;
+    color: #4c84d8;
+    font-weight: bold;
+    text-align: left;
+}
+
+.table_alarm tr:hover {
+    background-color: #1f2840;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .scheduler {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .form_alarm input {
+        font-size: 0.9em;
+    }
+
+    .form_alarm button {
+        font-size: 0.9em;
+        padding: 10px 18px;
+    }
+
+    .table_alarm th,
+    .table_alarm td {
+        font-size: 0.9em;
+    }
+}
