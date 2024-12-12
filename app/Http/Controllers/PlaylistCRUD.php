@@ -24,24 +24,23 @@ class PlaylistCRUD extends Controller
 
         PlaylistCrudmodel::create($validated);
 
-        return redirect('/index1');
+        return redirect('/index');
     }
 
     public function edit($id)
     {
         $crud = PlaylistCrudmodel::findOrFail($id); 
-        return view('edit1', compact('crud'));
+        return view('edit', compact('crud'));
     }
     
     public function create()
     {
-
-        return view('create1');
+        return view('create');
     }
 
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
+        $request->validate([
             'name' => 'required|string|max:255',
             'title' => 'required|string|max:255',
             'duration' => 'required|integer',
@@ -50,10 +49,17 @@ class PlaylistCRUD extends Controller
     
         $crud = PlaylistCrudmodel::findOrFail($id);
     
-        $crud->update($validated);
-
-        return redirect('/index1');
+        $crud->update([
+            'name' => $request->name,
+            'title' => $request->title,
+            'duration' => $request->duration,
+            'genre' => $request->genre,
+        ]);
+    
+        return redirect('/index');
     }
+    
+
     
 
     public function destroy($id)

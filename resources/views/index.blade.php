@@ -23,11 +23,12 @@
         <div class="scheduler text-white">
             <div class="al">
                 <h3 class="title_alarm">PlaylistsWorld - place where you can add your favourite playlists</h3>
-                <a href="/create1"><button id="addalarmbtn" class="alarm_button">Add New Alarm</button></a>
+                <a href="/create1"><button id="addalarmbtn" class="alarm_button">Add New Playlist</button></a>
             </div>
             <table class="table_alarm">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Name </th>
                         <th>Title</th>
                         <th>Duration</th>
@@ -37,7 +38,8 @@
                 <tbody>
                     @foreach ($crud as $item)
                         <tr>
-                            <th scope="row">{{ $item->name }}</th>
+                            <th scope="row">{{ $item->id }}</th>
+                            <td>{{ $item->name }}</td>
                             <td>{{ $item->title }}</td>
                             <td>{{ $item->duration }}</td>
                             <td>{{ $item->genre }}</td>
@@ -55,9 +57,9 @@
                                     @method('delete')
                                 </form>
                             </td>
-
                         </tr>
                     @endforeach
+
 
 
 
