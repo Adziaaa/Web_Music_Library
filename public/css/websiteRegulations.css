@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
@@ -17,17 +18,13 @@ html, body {
 
 h2 {
     color: #2965cc;
-    /* Highlighted headings */
     border-bottom: 1px solid #2965cc;
-    /* Underline for headings */
     padding-bottom: 5px;
 }
 
-#content > p {
-    /* font-size: 17px; */
+#content>p {
     text-align: left;
     margin-bottom: 20px;
-    /* margin: 10px 0; */
 }
 
 .RegulationPoint {
@@ -43,7 +40,7 @@ li {
     margin-top: 10px;
 }
 
-.RegulationPoint > li{
+.RegulationPoint>li {
     margin-bottom: 5px;
 }
 
