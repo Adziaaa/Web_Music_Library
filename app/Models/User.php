@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'description',
+        'notify_on_new_album',
     ];
 
     /**
