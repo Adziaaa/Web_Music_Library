@@ -3,7 +3,6 @@
     margin: 50px auto;
     padding: 40px;
     background-color: #222936;
-    /* Dark card-like background */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.332);
     border: 1px solid #333;
@@ -16,7 +15,6 @@
     color: #ffffff;
 }
 
-/* Form Styling */
 .form_alarm {
     margin-top: 20px;
 }
@@ -52,12 +50,10 @@
     color: #000000;
 }
 
-/* Footer Styling */
 x-footer {
     margin-top: 40px;
 }
 
-/* Table Styling */
 .table_alarm {
     width: 100%;
     border-collapse: collapse;
@@ -85,7 +81,6 @@ x-footer {
     background-color: #1f2840;
 }
 
-/* Links */
 a {
     text-decoration: none;
 }
