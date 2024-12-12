@@ -1,67 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $playlist->name }}</title>
-</head>
-<body>
-    <h1>{{ $playlist->name }}</h1>
 
-    <!-- Display existing songs in the playlist -->
-    <ul>
-        @foreach($playlist->songs as $song)
-            <li>{{ $song->title }} - {{ $song->artist }}</li>
-        @endforeach
-    </ul>
+@section('content')
+<div class="playlist-gallery">
+    <div class="playlist-header">
+        <h2>Playlist: {{ $playlist->name }}</h2>
+        <button class="add-song-btn" onclick="showAddSong()">Add Song</button>
+    </div>
 
-    @foreach($playlist->songs as $song)
-        <div>
-            <span>{{ $song->name }}</span>
-            <form action="{{ route('playlists.removeSong', ['playlist' => $playlist->id, 'song' => $song->id]) }}" method="POST" style="display: inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to remove this song?')">
-                    Delete
-                </button>
-            </form>
-        </div>
-    @endforeach
-
-    @section('content')
-        <div class="playlist-details">
-            <h1>{{ $playlist->name }}</h1>
-            
-            <div class="songs">
-                @foreach ($playlist->songs as $song)
-                    <div class="song">
-                        <img src="{{ asset('storage/' . $song->cover_image) }}" alt="{{ $song->name }}">
-                        <p>{{ $song->name }}</p>
-                    </div>
-                @endforeach
+    <div class="gallery">
+        @foreach($songs as $song)
+            <div class="song-item">
+                <img src="{{ $song->cover_url }}" alt="{{ $song->title }}" class="song-cover">
+                <div class="song-info">
+                    <div class="song-title">{{ $song->title }}</div>
+                    <div class="song-artist">{{ $song->artist }}</div>
+                </div>
+                <form action="{{ route('playlist.removeSong', $song->id) }}" method="POST" class="remove-song-form">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="remove-btn">Remove</button>
+                </form>
             </div>
-        </div>
-    @endsection
+        @endforeach
+    </div>
 
+    <div class="playlist-controls">
+        <button id="backBtn_songs" class="control-btn">←</button>
+        <button id="nextBtn_songs" class="control-btn">→</button>
+    </div>
+</div>
 
-    <!-- Form to add a new song to the playlist -->
-    <form action="{{ route('playlists.addSong', $playlist->id) }}" method="POST">
-        @csrf
-        <label for="song_id">Add Song to Playlist:</label>
-        <select name="song_id" id="song_id">
-            @foreach($songs as $song)
-                <option value="{{ $song->id }}">{{ $song->title }} - {{ $song->artist }}</option>
-            @endforeach
-        </select>
-        <button type="submit">Add Song</button>
-    </form>
+<div class="add-song">
+    <div class="modal-content">
+        <h3>Add a Song</h3>
+        <form action="{{ route('playlist.addSong', $playlist->id) }}" method="POST">
+            @csrf
+            <input type="text" name="song_title" placeholder="Song Title" required>
+            <input type="text" name="song_artist" placeholder="Artist Name" required>
+            <input type="text" name="song_cover" placeholder="Cover Image URL" required>
+            <button type="submit">Add Song</button>
+        </form>
+        <button class="close-modal" onclick="closeAddSong()">Close</button>
+    </div>
+</div>
 
-    <form action="{{ route('playlists.index') }}" method="GET" style="margin-top: 20px;">
-        <button type="submit" class="btn btn-primary">Save and Exit</button>
-    </form>
+@endsection
 
-    @if(session('success'))
-        <p>{{ session('success') }}</p>
-    @endif
-</body>
 </html>
