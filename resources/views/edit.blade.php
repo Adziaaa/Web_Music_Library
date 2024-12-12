@@ -5,7 +5,7 @@
 
 
         <div class="scheduler">
-            <h3 class="title_alarm">Update Alarm</h3>
+            <h3 class="title-alarm"><b>Update Playlist</b></h3>
             <div class="form_alarm">
                 <form action="{{ route('update', ['id' => $playlist->id]) }}" method="POST">
                     @csrf
