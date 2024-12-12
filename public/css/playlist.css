@@ -1,0 +1,149 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.playlist-gallery {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.gallery {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.song-item {
+    width: 250px; 
+    flex-shrink: 0;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease;
+    border: 1px solid #ddd; 
+}
+
+.song-item:hover {
+    transform: translateY(-5px);
+}
+
+.song-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.song-info {
+    margin-bottom: 10px;
+}
+
+.song-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333; 
+}
+
+.song-artist {
+    font-size: 0.9rem;
+    color: #777; 
+}
+
+.remove-btn {
+    background-color: #f44336; 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #e53935;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#backBtn_songs {
+    left: 10px;
+}
+
+#nextBtn_songs {
+    right: 10px;
+}
+
+.add-song-form {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.add-song-btn {
+    padding: 12px 25px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-song-btn:hover {
+    background-color: #45a049; 
+}
+
+.exit-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.exit-form button {
+    padding: 12px 25px;
+    background-color: #2196F3; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.exit-form button:hover {
+    background-color: #0b7dda; 
+}
+
+p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+

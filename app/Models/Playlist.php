@@ -18,6 +18,7 @@ class Playlist extends Model
 
     public function songs()
     {
-        return $this->belongsToMany(PopularSong::class);
+        return $this->belongsToMany(PopularSong::class, 'playlist_song', 'playlist_id', 'song_id');
     }
 }
+
