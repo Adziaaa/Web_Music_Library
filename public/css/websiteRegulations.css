@@ -6,17 +6,32 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+h3 {
+    background: linear-gradient(90deg, #fcfcfc, #04085d, #7263de);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s infinite;
+    font-size: large;
+    font-weight: bold;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
 .regulations {
     text-align: center;
     margin-bottom: 30px;
-}
-
-h3 {
-    color: #2965cc;
-    /* Highlighted headings */
-    border-bottom: 2px solid #2965cc;
-    /* Underline for headings */
-    padding-bottom: 5px;
 }
 
 p {
@@ -92,8 +107,39 @@ footer marquee {
     padding: 60px;
 }
 
+.rules  h1{
+    font-size: larger;
+    font-weight: bolder;
+}
+
 #rules {
     text-align: left;
     font-size: 21px;
     margin: 0px;
+}
+
+
+body {
+    cursor: none; 
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4c0608;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    transition: transform 0.1s ease, opacity 0.2s ease;
+    transform: translate(-50%, -50%);
+    background-color: rgba(78, 5, 5, 0.808);
+}
+
+body:hover .custom-cursor {
+    opacity: 1;
+}
+
+body:not(:hover) .custom-cursor {
+    opacity: 0;
 }

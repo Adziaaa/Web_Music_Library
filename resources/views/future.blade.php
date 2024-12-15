@@ -13,7 +13,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     
         <title>FUTURE</title>
-
+    <body>
+        <h2>Changes soon to come...</h2>
 
 <main>
     <canvas id="container" width="200" height="200"></canvas>

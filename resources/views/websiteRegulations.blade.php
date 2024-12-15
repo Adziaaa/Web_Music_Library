@@ -1,5 +1,6 @@
 <x-app-layout>
     <link rel="stylesheet" href="{{ asset('css/websiteRegulations.css') }}">
+    <div class="custom-cursor"></div>
 
     <div class=" rules">
         <div class="regulations">
@@ -88,4 +89,5 @@
             </marquee>
         </footer>
     </div>
+    <script src="{{ asset('js/websiteRegulations.js') }}"></script>
 </x-app-layout>
