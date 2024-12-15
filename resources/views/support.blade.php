@@ -40,7 +40,10 @@
                 <label for="content">Message:</label>
                 <textarea name="content" id="content" placeholder="what is the issue?" required></textarea>
             </div>
-            <button type="submit">Send Email</button>
+            <button type="submit" id="submitButton">Send Email</button>
+
+
+
         </form>
 </section>
 </main>

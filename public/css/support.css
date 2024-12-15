@@ -171,12 +171,14 @@ button[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
     background-color: #5d0404;
-    transition: border-left-color 0.2s ease;
+    transform: scale(1.05);
 }
 
 .success-message {

@@ -39,11 +39,5 @@ document.getElementById('dream-team-title').addEventListener('click', function (
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
-    const loader = document.getElementById("loader");
 
-    form.addEventListener("submit", function () {
-        loader.style.display = "flex"; // Show the loader
-    });
-});
+
