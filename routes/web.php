@@ -16,6 +16,7 @@ Route::get('/', [HomeController::class, 'dashboard'])->middleware(['auth'])->nam
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 Route::get('/about', function() { return view ('about');});
+Route::get('/future', function() { return view ('future');});
 
 
 // Route::get('/', function () {

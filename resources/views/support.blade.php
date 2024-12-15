@@ -53,14 +53,15 @@
         <h4>Company</h4>
         <ul>
             <li><a href="/about">About us</a></li>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">Affiliate program</a></li>
+            <li><a href="/websiteRegulations">Privacy policy</a></li>
+            <li><a href="/about">Affiliate program</a></li>
+            <li><a href="/future">Future work</a></li>
         </ul>
     </div>
     <div class="bottom-section">
         <h4>Help</h4>
         <ul>
-            <li><a href="#">Q&A</a></li>
+            <li><a href="/contact">Q&A</a></li>
             <li><a href="#">Sign up</a></li>
         </ul>
     </div>
@@ -79,10 +80,6 @@
             <p>©2024 Made by Group 7 | All Rights Reserved</p>
         </marquee>
     </footer>
-</div>
-    <!--hehefun for reloading--->
-<div id="loader" class="loader" style="display: none;">
-    <div class="spinner"></div>
 </div>
 
 
