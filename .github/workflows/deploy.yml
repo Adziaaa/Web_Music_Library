@@ -34,7 +34,7 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          cd ~/Desktop/Web_Music_Library
+          cd ~/Web_Music_Library
           git pull origin main
           composer install
           composer require laravel/breeze --dev
