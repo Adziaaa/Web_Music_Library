@@ -33,7 +33,6 @@ jobs:
         host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        port: 2045
         script: |
           cd ~/Desktop/Web_Music_Library
           git pull origin main
