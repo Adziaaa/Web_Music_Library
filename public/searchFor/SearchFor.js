@@ -1,6 +1,8 @@
 let debounceTimer;
 const queryCache = {}; // Cache for storing results of previous queries
 
+document.getElementById('searchBarForm').addEventListener('input', () => searchMusic());
+
 function debounce(func, delay) {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(func, delay);
@@ -50,11 +52,13 @@ function renderResults(data) {
     const songs = data.songs || [];
     const albums = data.albums || [];
     const artists = data.artists || [];
+    const playlists = data.playlists || [];
     const profiles = data.profiles || [];
 
     const allResults = [
         ...songs.map(item => ({ ...item, type: 'song' })),
         ...albums.map(item => ({ ...item, type: 'album' })),
+        ...playlists.map(item => ({ ...item, type: 'album' })),
         ...artists.map(item => ({ ...item, type: 'artist' })),
         ...profiles.map(item => ({ ...item, type: 'profile' }))
     ];
@@ -95,6 +99,10 @@ function renderResults(data) {
                 case 'artist':
                     text.textContent = `${result.name} - ${result.type}`;
                     text.href = `/artist/${result.id}`;
+                    break;
+                case 'playlist':
+                    text.textContent = `${result.name} - ${result.type}`;
+                    text.href = `/playlist/${result.id}`;
                     break;
                 case 'profile':
                     text.textContent = `${result.name} - ${result.type}`;

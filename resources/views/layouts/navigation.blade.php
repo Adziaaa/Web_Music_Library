@@ -42,7 +42,6 @@
                             type="text" 
                             placeholder="Search..." 
                             class="searchBar" 
-                            oninput="searchMusic()" 
                         />
                         <div class="dropdown" id="dropdown" style="display: none;">
                             <!-- Search results will appear here dynamically -->
