@@ -105,6 +105,15 @@
                 >{{ __('Saved.') }}</p>
             @endif
         </div>
+<<<<<<< HEAD
+=======
+        @if($errors->has('rate_limit'))
+            <div class="alert alert-danger">
+                {{ $errors->first('rate_limit') }}
+            </div>
+        @endif
+
+>>>>>>> 3de4682 (Daniel Extension. DDOS DOS Bot protection)
     </form>
 </section>
 

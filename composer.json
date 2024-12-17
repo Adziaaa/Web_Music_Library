@@ -6,6 +6,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+<<<<<<< HEAD
+=======
+        "anhskohbo/no-captcha": "^3.6",
+>>>>>>> 3de4682 (Daniel Extension. DDOS DOS Bot protection)
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },

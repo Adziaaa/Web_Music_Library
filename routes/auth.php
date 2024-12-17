@@ -15,23 +15,41 @@ Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
 
+<<<<<<< HEAD
     Route::post('register', [RegisteredUserController::class, 'store']);
+=======
+    Route::post('register', [RegisteredUserController::class, 'store'])
+        ->middleware('throttle:5,60');
+>>>>>>> 3de4682 (Daniel Extension. DDOS DOS Bot protection)
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
 
+<<<<<<< HEAD
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
+=======
+    Route::post('login', [AuthenticatedSessionController::class, 'store'])
+        ->middleware('throttle:5,60');
+>>>>>>> 3de4682 (Daniel Extension. DDOS DOS Bot protection)
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
         ->name('password.request');
 
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
+<<<<<<< HEAD
+=======
+        ->middleware('throttle:3,60')
+>>>>>>> 3de4682 (Daniel Extension. DDOS DOS Bot protection)
         ->name('password.email');
 
     Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
         ->name('password.reset');
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
+<<<<<<< HEAD
+=======
+        ->middleware('throttle:3,60')
+>>>>>>> 3de4682 (Daniel Extension. DDOS DOS Bot protection)
         ->name('password.store');
 });
 
@@ -40,11 +58,19 @@ Route::middleware('auth')->group(function () {
         ->name('verification.notice');
 
     Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
+<<<<<<< HEAD
         ->middleware(['signed', 'throttle:6,1'])
         ->name('verification.verify');
 
     Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
         ->middleware('throttle:6,1')
+=======
+        ->middleware(['signed', 'throttle:6,60'])
+        ->name('verification.verify');
+
+    Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
+        ->middleware('throttle:6,60')
+>>>>>>> 3de4682 (Daniel Extension. DDOS DOS Bot protection)
         ->name('verification.send');
 
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])

@@ -32,6 +32,21 @@
             </label>
         </div>
 
+<<<<<<< HEAD
+=======
+
+        <!-- CAPTCHA -->
+        @if (RateLimiter::attempts(request()->ip()) >= 3)
+            <div class="form-group mt-4">
+                {!! NoCaptcha::renderJs() !!}
+                {!! NoCaptcha::display() !!}
+                @error('g-recaptcha-response')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+        @endif
+
+>>>>>>> 3de4682 (Daniel Extension. DDOS DOS Bot protection)
         <div class="flex items-center justify-center mt-4">
             @if (Route::has('password.request'))
                 <a class=" underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
@@ -60,5 +75,29 @@
         <div class="mt-4"><br></div>
     </form>
 
+<<<<<<< HEAD
+=======
+    <!-- Countdown Timer JavaScript -->
+    @if (session('timeLeft'))
+        <script>
+            let timeLeft = {{ session('timeLeft') }};
+            const countdownElement = document.getElementById('countdown');
+            const interval = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    countdownElement.textContent = timeLeft;
+                }
+                if (timeLeft === 0) {
+                    clearInterval(interval);
+                    document.getElementById('timeLeftContainer').style.display = 'none';
+                }
+            }, 1000);
+        </script>
+        <div id="timeLeftContainer">
+            Time left: <span id="countdown"></span> seconds
+        </div>
+    @endif
+
+>>>>>>> 3de4682 (Daniel Extension. DDOS DOS Bot protection)
 
 </x-guest-layout>
