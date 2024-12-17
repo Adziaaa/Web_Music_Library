@@ -125,6 +125,9 @@
         <div class="search">
             <input type="text" spellcheck="true" placeholder="What would you like to listen?">
         </div>
+        <div class="playlist-container">
+            <a href="{{ route('playlists') }}" class="btn btn-primary">Playlists</a>
+        </div>
         <div class="menu">
             <button class="profile">⛄</button>
             <div class="hide">

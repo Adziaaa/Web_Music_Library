@@ -263,5 +263,4 @@ footer marquee {
 body {
     background: linear-gradient(to bottom, #00203f, #000);
     min-height: 100vh;
-    /* Ensures it covers full viewport height */
 }
